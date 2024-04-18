@@ -14,28 +14,26 @@
         <!-- sidebar -->
         @include('layout.sidebar')
         <div class="main ">
-        <!-- navbar -->
-        <nav class="navbar navbar-expand-sm atas">
-            <div class="container-fluid">
-                <button class="navbar-brand" id="button-navbar" href="#">
-                    <svg id="hamburger-logo" width="34" height="34" viewBox="0 0 48 48" fill="currentColor" x="128" y="128" role="img" style="display:inline-block;vertical-align:middle" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M7.95 11.95h32m-32 12h32m-32 12h32"/></g></svg>
-                </button>
-                <div class="navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <span class="navbar-keterangan">@yield('span')</span>
-                        </li>
-                    </ul>
-                </div>
+            <nav class="navbar navbar-expand-sm atas">
+                <div class="container-fluid">
+                    <button class="navbar-brand" id="button-navbar" href="#">
+                        <svg id="hamburger-logo" width="34" height="34" viewBox="0 0 48 48" fill="currentColor" x="128" y="128" role="img" style="display:inline-block;vertical-align:middle" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M7.95 11.95h32m-32 12h32m-32 12h32"/></g></svg>
+                    </button>
+                    <div class="navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <span class="navbar-keterangan">@yield('tittle')</span>
+                            </li>
+                        </ul>
+                    </div>
 
-                <!-- Tulisan di sebelah kanan navbar -->
-                <div class="ml-auto d-flex user">
-                    <p class="namaUser">Uchiha Sakuke</p>
-                    <img class="fotoUser" src="{{ URL('img/userPhoto.png') }}" width="24px" height="24px"alt="">
-                </div>
-            </div>  
-        </nav>
-
+                    <!-- Tulisan di sebelah kanan navbar -->
+                    <div class="ml-auto d-flex user">
+                        <p class="namaUser">Uchiha Sakuke</p>
+                        <img class="fotoUser" src="{{ URL('img/userPhoto.png') }}" width="24px" height="24px"alt="">
+                    </div>
+                </div>  
+            </nav>
 
             @yield('content')
         </div>
