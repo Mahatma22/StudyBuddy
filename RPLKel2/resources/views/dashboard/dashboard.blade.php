@@ -229,7 +229,94 @@
         </div>
     </div>
 </div>
-
 <!-- Zaim -->
+    <div id="courseOverviewCard" class="card">
+        <div class="card-header bg-white font-weight-bold">
+                Course Overview
+        </div>
 
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-md-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card 1</h5>
+                                        <p class="card-text">Content of card 1.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card 2</h5>
+                                        <p class="card-text">Content of card 2.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card 3</h5>
+                                        <p class="card-text">Content of card 3.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card 4</h5>
+                                        <p class="card-text">Content of card 4.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-md-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card 5</h5>
+                                        <p class="card-text">Content of card 5.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card 6</h5>
+                                        <p class="card-text">Content of card 6.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev bg-black" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev" style="width: 25px;height: 25px; border-radius:100%; margin-top:50px; left: -15px">
+                <span class="carousel-control-prev-icon" aria-hidden="true" style="margin-left:0px"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            
+            <button class="carousel-control-next bg-black" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next" style="width: 25px;height: 25px; border-radius:100%; margin-top:50px ;right: -15px">
+                <span class="carousel-control-next-icon" aria-hidden="true" style="margin-left:0px"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>     
+    </div>
 @endsection
