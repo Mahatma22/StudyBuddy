@@ -34,7 +34,7 @@
         width: 100%;
         margin: 0;
         padding: 0;
-        background-image: url('Wave Texture.png');
+        background-image: url('img/Wave Texture.png');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
