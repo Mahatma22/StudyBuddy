@@ -325,5 +325,6 @@
                 </button>
             </div>
         </div>
+        <hr>
     </div>
 @endsection
