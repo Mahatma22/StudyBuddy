@@ -229,7 +229,90 @@
         </div>
     </div>
 </div>
-
 <!-- Zaim -->
+    <div id="courseOverviewCard" class="card">
+        <div class="card-header bg-white font-weight-bold">
+                Course Overview
+        </div>
 
+        <div id="card-body">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-interval="false">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="card">
+                                    <img src="{{ URL('img/math image.png') }}" class="card-img-top" alt="Image for Card 1">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Mathematics</h5>
+                                            <a href="" class="btn btn-primary">Go to Course</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="card">
+                                    <img src="{{ URL('img/physics image.png') }}" class="card-img-top" alt="Image for Card 2">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Physics</h5>
+                                            <a href=" " class="btn btn-primary">Go to Course</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="card">
+                                    <img src="{{ URL('img/biology image.png') }}" class="card-img-top" alt="Image for Card 3">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Biology</h5>
+                                            <a href=" " class="btn btn-primary">Go to Course</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="card">
+                                    <img src="{{ URL('img/chemistry image.png') }}" class="card-img-top" alt="Image for Card 4">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Chemistry</h5>
+                                            <a href=" " class="btn btn-primary">Go to Course</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="card">
+                                    <img src="{{ URL('img/course image.jpg') }}" class="card-img-top" alt="Image for Card 5">
+                                        <div class="card-body">
+                                            <h5 class="card-title">English</h5>
+                                            <a href=" " class="btn btn-primary">Go to Course</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev bg-black" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev" style="width: 25px;height: 25px; border-radius:100%; margin-top:130px; left: 3px">
+                    <span class="carousel-control-prev-icon" aria-hidden="true" style="margin-left:0px"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                
+                <button class="carousel-control-next bg-black" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next" style="width: 25px;height: 25px; border-radius:100%; margin-top:130px; right: 3px">
+                    <span class="carousel-control-next-icon" aria-hidden="true" style="margin-left:0px"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <hr>
+    </div>
 @endsection
