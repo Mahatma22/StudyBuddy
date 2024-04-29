@@ -59,80 +59,10 @@
                             </div>
                         </div>
 
-                        {{-- <fieldset class="row mb-4">
-                            <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
-                            <div class="col-sm-8">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                                <label class="form-check-label" for="gridRadios1">
-                                First radio
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                                <label class="form-check-label" for="gridRadios2">
-                                Second radio
-                                </label>
-                            </div>
-                            <div class="form-check disabled">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
-                                <label class="form-check-label" for="gridRadios3">
-                                Third disabled radio
-                                </label>
-                            </div>
-                            </div>
-                        </fieldset>
-
-                        <div class="row mb-4">
-                            <div class="col-sm-8 offset-sm-2">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                <label class="form-check-label" for="gridCheck1">
-                                Example checkbox
-                                </label>
-                            </div>
-                            </div>
-                        </div> --}}
-
                         <button type="submit" class="btn btn-primary" style="font-size: 14px">Submit</button>
                     </form>
-                    {{-- <div class="row">
-                        <div class="col-sm-4 text-center font-weight-light">
-                            Course
-                        </div>
-                        <div class="col-sm-4 text-center font-weight-bold">
-                            Subject
-                        </div>
-                        <div class="col-sm-4 text-center font-weight-bold">
-                            Action
-                        </div>
-                    </div>
-                    <hr>
-
-                    <div class="row">
-                        <div class="col-sm-4 text-center font-weight-bold">
-                            <div class="row text-center font-weight-normal">
-                                <div class="col">
-                                    Mathematics
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 text-center font-weight-bold">
-                            <div class="row text-center font-weight-normal">
-                                <div class="col">
-                                    Integral
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 text-center font-weight-bold">
-                            <div class="d-flex justify-content-center">
-                                <a href="#" class="btn btn-primary btn-sm" style="font-size: 12px;">Attempt Quiz</a>
-                            </div>
-                        </div>
-                    </div>
-                    <hr> --}}
-
                 </div>
+                
             </div>
         </div>
     </div>
