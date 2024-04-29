@@ -17,7 +17,11 @@ Route::get('/', function () {
     return view('dashboard.dashboard');
 });
 
-Route::get('/test', function () {
+Route::get('/landing', function () {
     return view('laddingpage');
+});
+
+Route::get('/feedback', function () {
+    return view('feedback');
 });
 

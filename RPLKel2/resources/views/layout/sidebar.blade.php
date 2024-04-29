@@ -1,15 +1,15 @@
 <aside id="sidebar">
     <div class="d-flex">
         <a href="#" class="btn" id="toggle-btn">
-            <img src="{{ URL('img/tempIcon.png') }}" width="24px" height="24px"alt="">
-        </a>    
+            <img src="{{ URL('img/LogoBuddy.png') }}" width="32px" height="32px"alt="">
+        </a>
         <div class="sidebar-logo">
             <a href="#">StuddyBuddy</a>
         </div>
     </div>
     <ul class="sidebar-nav">
         <li class="sidebar-item">
-            <a href="#" class="sidebar-link">
+            <a href="/" class="sidebar-link">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <rect width="24" height="24" fill="url(#pattern0_178_144)"/>
                     <defs>
@@ -22,7 +22,7 @@
                 <span>Dashboard</span>
             </a>
         </li>
-        
+
         <li class="sidebar-course">
             <a href="#" class="sidebar-link has-dropdown collapsed"  data-bs-toggle="collapse" data-bs-target="#course" aria-expanded="false" aria-controls="course">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
