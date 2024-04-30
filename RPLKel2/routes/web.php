@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\loginUserController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\dashboardController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,12 +17,21 @@ use App\Http\Controllers\loginUserController;
 */
 
 Route::get('/', function () {
-    return view('dashboard.dashboard');
+    return view('dashboard.dashboardUser');
 });
+
+
 
 Route::get('/test', function () {
     return view('laddingpage');
 });
 
-Route::get('/loginUser', [loginUserController::class, 'index'])->name('loginUser');
+Route::get('/loginUser', [AuthController::class, 'viewLoginUser'])->name('loginUser');
+Route::get('/registerUser', [AuthController::class, 'viewRegisterUser'])->name('registerUser');
+Route::get('/loginAdmin', [AuthController::class, 'viewAdminUser'])->name('loginAdmin');
 
+Route::get('/dashboardAdmin', [dashboardController::class, 'dashboardAdmin'])->name('dashoardAdmin');
+
+Route::post('/dataRegister', [AuthController::class, 'registerUser'])->name('dataRegister');
+Route::post('/dataLogin', [AuthController::class, 'loginUser'])->name('dataLogin');
+Route::post('/dataAdmin', [AuthController::class, 'loginAdmin'])->name('dataAdmin');
