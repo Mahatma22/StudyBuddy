@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\loginUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,4 +21,6 @@ Route::get('/', function () {
 Route::get('/test', function () {
     return view('laddingpage');
 });
+
+Route::get('/loginUser', [loginUserController::class, 'index'])->name('loginUser');
 
