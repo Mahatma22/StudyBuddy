@@ -16,22 +16,29 @@ use App\Http\Controllers\dashboardController;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard.dashboardUser');
+
+// route untuk User
+Route::group(['middleware' => 'UserAuthCheck'], function () {   
+    Route::get('/dashboardUser', [dashboardController::class, 'dashboardUser'])->name('dashboardUser');
+});
+
+// route untuk Admin
+Route::group(['middleware' => 'AdminAuthCheck'], function () {    
+    Route::get('/dashboardAdmin', [dashboardController::class, 'dashboardAdmin'])->name('dashboardAdmin');
 });
 
 
-
-Route::get('/test', function () {
-    return view('laddingpage');
+Route::group(['middleware' => 'adminLoggedIn'], function () {
+    Route::get('/loginAdmin', [AuthController::class, 'viewAdminUser'])->name('loginAdmin')->middleware('userLoggedIn');
+    Route::get('/', function () { return view('laddingpage'); })->middleware('userLoggedIn');
 });
 
-Route::get('/loginUser', [AuthController::class, 'viewLoginUser'])->name('loginUser');
-Route::get('/registerUser', [AuthController::class, 'viewRegisterUser'])->name('registerUser');
-Route::get('/loginAdmin', [AuthController::class, 'viewAdminUser'])->name('loginAdmin');
-
-Route::get('/dashboardAdmin', [dashboardController::class, 'dashboardAdmin'])->name('dashoardAdmin');
+Route::group(['middleware' => 'userLoggedIn'], function () {
+    Route::get('/loginUser', [AuthController::class, 'viewLoginUser'])->name('loginUser')->middleware('adminLoggedIn');
+    Route::get('/registerUser', [AuthController::class, 'viewRegisterUser'])->name('registerUser')->middleware('adminLoggedIn');
+});
 
 Route::post('/dataRegister', [AuthController::class, 'registerUser'])->name('dataRegister');
 Route::post('/dataLogin', [AuthController::class, 'loginUser'])->name('dataLogin');
 Route::post('/dataAdmin', [AuthController::class, 'loginAdmin'])->name('dataAdmin');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');

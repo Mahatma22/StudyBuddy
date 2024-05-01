@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
@@ -18,7 +19,7 @@ class AuthController extends Controller
 
     
     public function viewAdminUser(){
-        return view('Auth.adminUser');
+        return view('Auth.loginAdmin');
     }
     
 
@@ -55,7 +56,7 @@ class AuthController extends Controller
         if($Auth){
             if(Hash::check($request->password,$Auth->password)){
                 $request->session()->put("loginUser",$Auth->user_id);
-                return redirect("/");
+                return redirect("/dashboardUser");
             }
             else{
                 return back()->with("Fail","Email atau Password Salah");

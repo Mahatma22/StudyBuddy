@@ -6,6 +6,8 @@
     <title>Login Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ URL('css/login.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" integrity="sha512-gOQQLjHRpD3/SEOtalVq50iDn4opLVup2TF8c4QPI3/NmUPNZOk2FG0ihi8oCU/qYEsw4P6nuEZT2lAG0UNYaw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
     <section class="login d-flex ">
@@ -31,19 +33,30 @@
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
                                 <input type="text" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Masukan Email" value="{{old('email')}}">
+                                <span class="text-danger">@error("email") {{$message}} @enderror</span>
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
                                 <input type="password" class="form-control" id="password" name="password" placeholder="Masukan Password" value="{{old('password')}}">
+                                <span class="text-danger">@error("password") {{$message}} @enderror</span>
                             </div>
                             <button type="submit" class="btn btn-primary" name="login">User Login</button>
                         </form>
-                            <span>Belum Punya akun? <a href="registrasi" class="text-decoration-none">Daftar Disini</a></span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js" integrity="sha512-7VTiy9AhpazBeKQAlhaLRUk+kAMAb8oczljuyJHPsVPWox/QIXDFOnT9DUk1UC8EbnHKRdQowT7sOBe7LAjajQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+@if(Session::has("Fail"))
+<script>
+    swal("Gagal", "{!! Session::get('Fail') !!}", "error", {
+        button: "OK",
+    });
+</script>
+@endif
 </body>
+
 
 </html>
