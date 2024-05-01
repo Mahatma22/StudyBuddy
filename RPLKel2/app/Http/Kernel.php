@@ -2,6 +2,10 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\userLoggedIn;
+use App\Http\Middleware\adminLoggedIn;
+use App\Http\Middleware\UserAuthCheck;
+use App\Http\Middleware\AdminAuthCheck;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -53,6 +57,10 @@ class Kernel extends HttpKernel
      * @var array<string, class-string|string>
      */
     protected $middlewareAliases = [
+        'AdminAuthCheck' => AdminAuthCheck::class,
+        'adminLoggedIn' => adminLoggedIn::class,
+        'UserAuthCheck' => UserAuthCheck::class,        
+        'userLoggedIn' => userLoggedIn::class,        
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'auth.session' => \Illuminate\Session\Middleware\AuthenticateSession::class,
