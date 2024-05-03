@@ -28,7 +28,7 @@ class AuthController extends Controller
             'email'=>'required | unique:user',
             'password'=>'required|max:12|min:8',
             'Name' => 'required',
-            'Age' => 'required|max:2',
+            'Phone' => 'required',
             'School' => 'required'
         ]);
         
@@ -36,7 +36,7 @@ class AuthController extends Controller
             'email' => $validateData['email'],
             'password' => Hash::make($validateData['password']),
             'Name' => $validateData['Name'],
-            'Age' => $validateData['Age'],
+            'Phone' => $validateData['Phone'],
             'School' => $validateData['School']
         ]);
         if($inputData){
