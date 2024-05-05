@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\coursepage;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\dashboardController;
@@ -42,3 +43,5 @@ Route::post('/dataRegister', [AuthController::class, 'registerUser'])->name('dat
 Route::post('/dataLogin', [AuthController::class, 'loginUser'])->name('dataLogin');
 Route::post('/dataAdmin', [AuthController::class, 'loginAdmin'])->name('dataAdmin');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('/coursepage', [coursepage::class, 'index'])->name('coursepage');
