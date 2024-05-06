@@ -1,6 +1,64 @@
-@extends('layout.main')
+@extends('layoutAdmin.main')
 @section('tittle', 'Dashboard')
+@section('Name', $Name)
 
 @section('content')
-    <img src="data:image/jpeg;base64,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" alt="" style="width: 100%; height: 100%;">
+    <div class="container-fluid">
+        <div class="d-flex justify-content-center">
+            <div class="ms-3 mt-3">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's conte`nt.</p>
+                    </div>
+                </div>
+            </div>  
+            <div class="ms-3 mt-3">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's conte`nt.</p>
+                    </div>
+                </div>
+            </div>  
+            <div class="ms-3 mt-3">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's conte`nt.</p>
+                    </div>
+                </div>
+            </div>  
+            <div class="ms-3 mt-3">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's conte`nt.</p>
+                    </div>
+                </div>
+            </div>  
+            <div class="ms-3 mt-3">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's conte`nt.</p>
+                    </div>
+                </div>
+            </div>  
+            <div class="ms-3 mt-3">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's conte`nt.</p>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
 @endsection

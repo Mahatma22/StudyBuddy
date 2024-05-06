@@ -1,6 +1,7 @@
 
 @extends('layout.main')
 @section('tittle', 'Dashboard')
+@section('Name', $Name)
 
 @section('css')
 <link rel="stylesheet" href="css/dashboard.css"> 
