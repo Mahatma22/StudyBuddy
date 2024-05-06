@@ -111,8 +111,8 @@
         width: auto; /* Set width to auto */
 
     }
-
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" integrity="sha512-gOQQLjHRpD3/SEOtalVq50iDn4opLVup2TF8c4QPI3/NmUPNZOk2FG0ihi8oCU/qYEsw4P6nuEZT2lAG0UNYaw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -132,9 +132,9 @@
                         Login
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">As Admin</a></li>
+                        <li><a class="dropdown-item" href="{{ route('loginAdmin') }}">As Admin</a></li>
                         <li><hr class="dropdown-divider"></li> 
-                        <li><a class="dropdown-item" href="#">As User</a></li>
+                        <li><a class="dropdown-item" href="{{ route('loginUser') }}">As User</a></li>
                     </ul>
                 </li>
             </ul>
@@ -166,5 +166,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    </body>
-    </html>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js" integrity="sha512-7VTiy9AhpazBeKQAlhaLRUk+kAMAb8oczljuyJHPsVPWox/QIXDFOnT9DUk1UC8EbnHKRdQowT7sOBe7LAjajQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+@if(Session::has("Fail"))
+<script>
+    swal("Gagal", "{!! Session::get('Fail') !!}", "error", {
+        button: "OK",
+    });
+</script>
+@endif
+</body>
+</html>
