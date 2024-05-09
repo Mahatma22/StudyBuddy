@@ -13,8 +13,7 @@ class dashboardController extends Controller
     }
 
     public function dashboardUser ()
-    {
-        $userId=User::where('user_id',session('loginUser'))->first();        
-        return view('dashboard.dashboardUser', ['Name' => $userId->Name]);
+    {    
+        return view('dashboard.dashboardUser', ['Name' => session('userName')]);
     }
 }
