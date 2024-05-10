@@ -27,6 +27,7 @@ Route::group(['middleware' => 'UserAuthCheck'], function () {
 Route::group(['middleware' => 'AdminAuthCheck'], function () {    
     Route::get('/dashboardAdmin', [dashboardController::class, 'dashboardAdmin'])->name('dashboardAdmin');
     Route::get('/userPage', [userPageController::class, 'show'])->name('userPage');
+    Route::get('/delete-user/{id}', [userPageController::class, 'delete'])->name('delete-user');
 });
 
 

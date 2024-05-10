@@ -10,6 +10,12 @@ class userPageController extends Controller
     public function show()
     {
         $userData = User::all();
-        return view('userAdminPage.userPage', ["Name"=> session('loginAdmin'), "userData"=>$userData] );
+        return view('userAdminPage.userPage', ["userDatas"=>$userData] );
+    }
+
+    public function delete($id){
+        $deleteUser = User::where('user_id',$id);
+        $deleteUser->delete();
+        return back()->with('success', 'Data Telah Dihapus');
     }
 }
