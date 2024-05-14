@@ -12,7 +12,7 @@
 <body >
     <div class="wrapper">
         <!-- sidebar -->
-        @include('layout.sidebar')
+        @include('layoutAdmin.sidebar')
         <div class="main ">
             <nav class="navbar navbar-expand-sm atas">
                 <div class="container-fluid">

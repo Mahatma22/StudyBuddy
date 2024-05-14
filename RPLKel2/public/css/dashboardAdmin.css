@@ -1,0 +1,40 @@
+
+
+a h6{
+    font-size: 30px;
+}
+
+a .card:hover{
+    background-color:rgb(235, 235, 235);
+    transition: ease-in-out .25s;
+}
+
+/* section .card{
+
+} */
+
+.card{
+    font-family: 'Inter', sans-serif;
+    margin-top: 21px
+}
+
+#courseProgressCard .card-header , #quizCard .card-header{
+    color: #008DDA;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+#courseProgressCard, #quizCard{
+    width: 48.5rem;
+    position: relative;
+}
+
+
+
+
+
+section.mx-3 .card{
+    width:20px;
+}
+
+

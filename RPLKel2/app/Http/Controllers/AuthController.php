@@ -56,6 +56,7 @@ class AuthController extends Controller
         if($Auth){
             if(Hash::check($request->password,$Auth->password)){
                 $request->session()->put("loginUser",$Auth->user_id);
+                $request->session()->put("userName",$Auth->Name);
                 return redirect("/dashboardUser");
             }
             else{
@@ -95,6 +96,7 @@ class AuthController extends Controller
     public function logout(){
         if (Session::has("loginUser")){           
             Session::pull("loginUser");
+            Session::pull("userName");
         }
         else{
             Session::pull("loginAdmin");
