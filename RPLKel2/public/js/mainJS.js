@@ -1,3 +1,5 @@
+
+
 const hamburger = document.querySelector('#button-navbar');
 const sidebarItems = document.querySelectorAll('.sidebar-item');
 
@@ -14,8 +16,19 @@ sidebarItems.forEach(item => {
     };
 });
 
+hamburger.onclick = () => {
+    document.querySelector('#sidebar').classList.toggle('expand');
+    document.querySelector('.main').classList.toggle('expanded');
+    document.querySelector('.profile').classList.toggle('profile-expand');
+};
 
+window.onscroll = function() {
+    const header = document.querySelector('nav.navbar');
+    const fixed_navbar = header.offsetTop;
 
-hamburger.onclick = ()=>document.querySelector('#sidebar').classList.toggle('expand');
-
-
+    if (window.pageYOffset > fixed_navbar) {
+        header.classList.add('navbar-fixed');
+    } else {
+        header.classList.remove('navbar-fixed');
+    }
+};

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\userPageController;
 use App\Http\Controllers\dashboardController;
+use App\Http\Controllers\inputQuizController;
 
 
 /*
@@ -28,6 +29,7 @@ Route::group(['middleware' => 'AdminAuthCheck'], function () {
     Route::get('/dashboardAdmin', [dashboardController::class, 'dashboardAdmin'])->name('dashboardAdmin');
     Route::get('/userPage', [userPageController::class, 'show'])->name('userPage');
     Route::get('/delete-user/{id}', [userPageController::class, 'delete'])->name('delete-user');
+    Route::resource('/quiz', inputQuizController::class);
 });
 
 

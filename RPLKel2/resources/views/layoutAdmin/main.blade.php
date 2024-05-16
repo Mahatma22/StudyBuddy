@@ -28,14 +28,17 @@
                     </div>
 
                     <!-- Tulisan di sebelah kanan navbar -->
-                    <div class="ml-auto d-flex user">
-                        <p class="namaUser">@yield('Name')</p>
-                        <img class="fotoUser" src="{{ URL('img/userPhoto.png') }}" width="24px" height="24px"alt="">
+                    <div class="profile">
+                        <div class="ml-auto d-flex user">
+                            <p class="namaUser">@yield('Name')</p>
+                            <img class="fotoUser" src="{{ URL('img/userPhoto.png') }}" width="24px" height="24px"alt="">
+                        </div>
                     </div>
                 </div>  
             </nav>
-
-            @yield('content')
+            <div class="content">
+                @yield('content')
+            </div>
         </div>
     </div>    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>    <script src="{{ asset('js/mainJS.js') }}"></script>
