@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\course;
 use App\Http\Controllers\coursepage;
+use App\Http\Controllers\MaterialController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\dashboardController;
@@ -44,4 +46,14 @@ Route::post('/dataLogin', [AuthController::class, 'loginUser'])->name('dataLogin
 Route::post('/dataAdmin', [AuthController::class, 'loginAdmin'])->name('dataAdmin');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/coursepage', [coursepage::class, 'index'])->name('coursepage');
+Route::get('/coursepage/{viewName}', [coursepage::class, 'index'])->name('coursepage');
+Route::get('/course', [course::class, 'index'])->name('course');
+
+#upload materi (admin)
+Route::get('/upload', [MaterialController::class, 'create'])->name('materials.create');
+Route::post('/materials', [MaterialController::class, 'store'])->name('materials.store');
+
+#download materi (user)
+Route::get('/materials/{id}/download', [MaterialController::class, 'download'])->name('materials.download');
+
+Route::get('/materials', [MaterialController::class, 'index'])->name('materials.index');
