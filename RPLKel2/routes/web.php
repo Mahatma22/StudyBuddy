@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\coursepage;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\profileController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\userPageController;
 use App\Http\Controllers\dashboardController;
@@ -41,6 +42,10 @@ Route::group(['middleware' => 'userLoggedIn'], function () {
     Route::get('/loginUser', [AuthController::class, 'viewLoginUser'])->name('loginUser')->middleware('adminLoggedIn');
     Route::get('/registerUser', [AuthController::class, 'viewRegisterUser'])->name('registerUser')->middleware('adminLoggedIn');
 });
+
+Route::get('/showProfile', [profileController::class, 'showProfile'])->name('userProfile.showProfile');
+Route::get('/editProfile', [profileController::class, 'editProfile'])->name('userProfile.editProfile');
+Route::put('/updateProfile/{id}', [profileController::class, 'updateProfile'])->name('userProfile.updateProfile');
 
 Route::post('/dataRegister', [AuthController::class, 'registerUser'])->name('dataRegister');
 Route::post('/dataLogin', [AuthController::class, 'loginUser'])->name('dataLogin');
