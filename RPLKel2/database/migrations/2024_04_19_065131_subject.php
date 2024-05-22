@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('subject', function (Blueprint $table) {
             $table->id('subject_id');
             $table->string('subject_name',255)->unique();
-            $table->string('video_link');
+            $table->string('video_link')->nullable();
+            $table->longText('subject_overview');
+            $table->string('subject_download');
             $table->unsignedBigInteger('course_id');
             $table->foreign('course_id')->references('course_id')->on('course');
             $table->timestamps();

@@ -2,31 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\course;
+use App\Models\coursechapter;
 use Illuminate\Http\Request;
 
-class coursepage extends Controller
+class course extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index($viewName)
+    public function index()
     {
-    
-        $views = [
-            "fungsi", 
-            "gbd", 
-            "gbr", 
-            "stat", 
-            "data"
-        ];
-
-        if(in_array($viewName, $views)){
-            return view("course.".$viewName);
-        }else{
-            abort(404);
-        }
-    
+        //
+        return view('course.course');
     }
 
     /**
@@ -48,7 +35,7 @@ class coursepage extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(course $course)
+    public function show(coursechapter $coursechapter)
     {
         //
     }
@@ -56,7 +43,7 @@ class coursepage extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(course $course)
+    public function edit(coursechapter $coursechapter)
     {
         //
     }
@@ -64,7 +51,7 @@ class coursepage extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, course $course)
+    public function update(Request $request, coursechapter $coursechapter)
     {
         //
     }
@@ -72,7 +59,7 @@ class coursepage extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(course $course)
+    public function destroy(coursechapter $coursechapter)
     {
         //
     }
