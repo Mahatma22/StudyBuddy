@@ -42,7 +42,7 @@ body{
     width: 80px;
     min-width: 80px;
     z-index: 1000;
-    transition: all .25s ease-in-out;
+    transition: all .35s ease-in-out;
     display: flex;
     flex-direction: column;
     background-color: #008DDA;
@@ -221,7 +221,7 @@ span{
 #hamburger-logo:hover{
     color: #fff;
     background-color: #008DDA;
-    transition: .25s;
+    transition: .35s;
     border: 1px white solid
 }
 

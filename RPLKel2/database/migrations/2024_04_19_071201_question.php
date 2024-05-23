@@ -14,9 +14,12 @@ return new class extends Migration
         Schema::create('question', function (Blueprint $table) {
             $table->id('question_id');
             $table->text('question');
+            $table->text('question_image')->nullable();
             $table->json('answer');
             $table->unsignedBigInteger('subject_id');
+            $table->unsignedBigInteger('course_id');
             $table->foreign('subject_id')->references('subject_id')->on('subject');
+            $table->foreign('course_id')->references('course_id')->on('course');
             $table->timestamps();
         });
     }

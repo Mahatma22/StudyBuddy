@@ -22,7 +22,7 @@
                     <div class="navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <span class="navbar-keterangan">@yield('tittle')</span>
+                                <span class="navbar-keterangan">{{ session('userName') }}</span>
                             </li>
                         </ul>
                     </div>

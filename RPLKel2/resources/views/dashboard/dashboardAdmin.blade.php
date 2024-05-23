@@ -1,6 +1,5 @@
 @extends('layoutAdmin.main')
 @section('tittle', 'Dashboard')
-@section('Name', $Name)
 
 @section('css')
 <link rel="stylesheet" href="css/dashboardAdmin.css"> 
@@ -11,9 +10,9 @@
         <div class="ms-3">
             <div class="container-fluid">
                 <div class="d-flex justify-content-center">
-                    <a href="#">
+                    <a href="/quiz">
                         <div class="mt-5">
-                            <div class="card card-admin" id="Quiz" style="width: 32.675rem; height: 15rem;">
+                            <div class="card card-admin" id="Quiz" style="width: 30rem; height: 15rem;">
                                 <div class="card-body">
                                     <div class="card-title">
                                         <div class="d-flex justify-content-center mt-3">
@@ -27,7 +26,7 @@
                     </a>
                     <a href="{{ route('userPage') }}">
                         <div class="ms-3 mt-5">
-                            <div class="card card-admin" id="Quiz" style="width: 32.675rem; height: 15rem;">
+                            <div class="card card-admin" id="Quiz" style="width: 30rem; height: 15rem;">
                                 <div class="card-body">
                                     <div class="card-title">
                                         <div class="d-flex justify-content-center mt-3">
@@ -41,7 +40,7 @@
                     </a>
                     <a href="#">
                         <div class="mx-3 mt-5">
-                            <div class="card card-admin" id="Quiz" style="width: 32.675rem; height: 15rem;">
+                            <div class="card card-admin" id="Quiz" style="width: 30rem; height: 15rem;">
                                 <div class="card-body">
                                     <div class="card-title">
                                         <div class="d-flex justify-content-center mt-3">

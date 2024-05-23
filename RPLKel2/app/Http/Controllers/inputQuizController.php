@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Quiz;
+use App\Models\Course;
+use App\Models\Subject;
+use App\Models\question;
 use Illuminate\Http\Request;
 
 class inputQuizController extends Controller
@@ -12,7 +14,11 @@ class inputQuizController extends Controller
      */
     public function index()
     {
-        return view('inputQuiz.index',["quizData"=>Quiz::all()]);
+        return view('InputQuizAdmin.index',[
+            "quizData"=>question::all(),
+            "courseData"=>Course::all(),
+
+    ]);
     }
 
     /**
@@ -20,7 +26,7 @@ class inputQuizController extends Controller
      */
     public function create()
     {
-        //
+        return view('InputQuizAdmin.index');
     }
 
     /**
@@ -28,21 +34,84 @@ class inputQuizController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            "course"=>'required',
+            "subject"=>'required',
+            "question"=>'required',
+            "AnswerA"=>'required',
+            "AnswerB"=>'required',
+            "AnswerC"=>'required',
+            "AnswerD"=>'required',
+            "Benar"=>'required',
+        ]);
+
+
+        $answers = [
+            $validateData['AnswerA'],
+            $validateData['AnswerB'],
+            $validateData['AnswerC'],
+            $validateData['AnswerD']
+        ];
+    
+        if (count($answers) !== count(array_unique($answers))) {
+            return back()->with("Fail","Jawaban yang Anda Inputkan Tidak Boleh Sama");
+        }
+
+        $answer = [            
+            "A" => [
+                "label" => $answers[0],
+                "nilai" => false
+            ],
+            "B" =>[
+                "label" => $answers[1],
+                "nilai" => false
+            ],
+            "C" =>[
+                "label" => $answers[2],
+                "nilai" => false
+            ],
+            "D" =>[
+                "label" => $answers[3],
+                    "nilai" => false
+            ]
+        ];
+
+        $answer[$validateData["Benar"]]["nilai"] = true;
+            
+        $answerConvert = [
+            "answer" => $answer
+        ];
+
+        $inputDB = question::create([
+            "question" => $validateData["question"],
+            "answer" => json_encode($answerConvert["answer"]),
+            "question_image" => $request->imageQuestion,
+            "subject_id" => $validateData["subject"],
+            "course_id" => $validateData["course"]
+        ]);
+
+        if ($inputDB) {
+            return back()->with("Success","Soal Berhasil Ditambahkan");
+        } else {
+            return back()->with("Fail","Soal Gagal Ditambahkan");
+        }
+
+
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Quiz $quiz)
+    public function show(question $question)
     {
-        //
+  
+        
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Quiz $quiz)
+    public function edit(question $question)
     {
         //
     }
@@ -50,7 +119,7 @@ class inputQuizController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Quiz $quiz)
+    public function update(Request $request, question $question)
     {
         //
     }
@@ -58,7 +127,7 @@ class inputQuizController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Quiz $quiz)
+    public function destroy(question $question)
     {
         //
     }

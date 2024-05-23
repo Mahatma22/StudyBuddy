@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\dropdownController;
 use App\Http\Controllers\userPageController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\inputQuizController;
@@ -30,6 +31,9 @@ Route::group(['middleware' => 'AdminAuthCheck'], function () {
     Route::get('/userPage', [userPageController::class, 'show'])->name('userPage');
     Route::get('/delete-user/{id}', [userPageController::class, 'delete'])->name('delete-user');
     Route::resource('/quiz', inputQuizController::class);
+    Route::get('/dataSubject/{course_id}', [dropdownController::class,'getSubjects'])->name('dataSubject');;
+    Route::get('/dataSubjcetTable/{course_id}', [dropdownController::class,'getTableSubjects'])->name('dataSubjcetTable');
+    Route::get('/detailQuiz/{course_id}', [dropdownController::class,'showQuizPage'])->name('detailQuiz');
 });
 
 
