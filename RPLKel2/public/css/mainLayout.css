@@ -226,7 +226,8 @@ span{
 }
 .fotoUser{
     margin-top:6px;
-    margin-right: 15px
+    margin-right: 15px;
+    border-radius: 50%;
 }
 
 .sidebar-active{

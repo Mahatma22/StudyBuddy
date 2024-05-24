@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('Name');
             $table->string('Phone');
             $table->string('School');
-            $table->string('ProfilePicture')->default('');
+            $table->string('ProfilePicture')->nullable();
             $table->timestamps();
         });
     }

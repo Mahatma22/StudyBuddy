@@ -17,7 +17,11 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex flex-column align-items-center text-center">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                            @if($user->ProfilePicture && file_exists(public_path('storage/' . $user->ProfilePicture)))
+                                <img src="{{ asset('storage/'.$user->ProfilePicture) }}" alt="User" class="rounded-circle" width="150" height="150">
+                            @else
+                                <img src="{{ URL('img/userPhoto.png') }}" alt="Default User Photo" class="rounded-circle" width="150" height="150">
+                            @endif
                             <div class="mt-3">
                                 <h4>{{ $user->Name }}</h4>
                                 <p class="text-secondary mb-1">Student</p>
