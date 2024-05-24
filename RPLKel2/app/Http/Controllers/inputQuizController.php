@@ -6,6 +6,7 @@ use App\Models\Course;
 use App\Models\Subject;
 use App\Models\question;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class inputQuizController extends Controller
 {
@@ -34,6 +35,7 @@ class inputQuizController extends Controller
      */
     public function store(Request $request)
     {
+        
         $validateData = $request->validate([
             "course"=>'required',
             "subject"=>'required',
@@ -43,8 +45,15 @@ class inputQuizController extends Controller
             "AnswerC"=>'required',
             "AnswerD"=>'required',
             "Benar"=>'required',
+            "imageQuestion"=>'mimes:png,jpg,jpeg|max:100000'
         ]);
+        
+        $photoQuiz = $validateData['imageQuestion'];
+        $fileName = date("Y-m-d H:i").$photoQuiz->getClientOriginalname();
+        $path = '/picture/photo-quiz/'.$fileName;
 
+
+        Storage::disk('public')->put($path,file_get_contents($photoQuiz));
 
         $answers = [
             $validateData['AnswerA'],
@@ -85,7 +94,7 @@ class inputQuizController extends Controller
         $inputDB = question::create([
             "question" => $validateData["question"],
             "answer" => json_encode($answerConvert["answer"]),
-            "question_image" => $request->imageQuestion,
+            "question_image" => $fileName,
             "subject_id" => $validateData["subject"],
             "course_id" => $validateData["course"]
         ]);
@@ -105,7 +114,8 @@ class inputQuizController extends Controller
     public function show(question $question)
     {
   
-        
+       
+
     }
 
     /**
@@ -121,7 +131,7 @@ class inputQuizController extends Controller
      */
     public function update(Request $request, question $question)
     {
-        //
+        
     }
 
     /**
