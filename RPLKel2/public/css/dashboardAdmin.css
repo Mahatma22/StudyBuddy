@@ -25,7 +25,7 @@ a .card:hover{
 }
 
 #courseProgressCard, #quizCard{
-    width: 48.5rem;
+    width: 45rem;
     position: relative;
 }
 

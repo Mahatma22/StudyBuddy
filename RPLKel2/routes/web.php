@@ -5,8 +5,10 @@ use App\Http\Controllers\coursepage;
 use App\Http\Controllers\MaterialController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\dropdownController;
 use App\Http\Controllers\userPageController;
 use App\Http\Controllers\dashboardController;
+use App\Http\Controllers\inputQuizController;
 
 
 /*
@@ -31,6 +33,15 @@ Route::group(['middleware' => 'AdminAuthCheck'], function () {
     Route::get('/dashboardAdmin', [dashboardController::class, 'dashboardAdmin'])->name('dashboardAdmin');
     Route::get('/userPage', [userPageController::class, 'show'])->name('userPage');
     Route::get('/delete-user/{id}', [userPageController::class, 'delete'])->name('delete-user');
+    Route::resource('/quiz', inputQuizController::class);
+    Route::get('/dataSubject/{course_id}', [dropdownController::class,'getSubjects'])->name('dataSubject');;
+    Route::get('/dataSubjcetTable/{course_id}', [dropdownController::class,'getTableSubjects'])->name('dataSubjcetTable');
+    Route::get('/allDataSubject', [dropdownController::class,'allDataSubject'])->name('allDataSubject');
+    Route::get('/deleteQuiz', [dropdownController::class,'deleteQuiz'])->name('deleteQuiz');
+    Route::get('/detailQuiz/{course_id}', [dropdownController::class,'showQuizPage'])->name('detailQuiz');
+    Route::post('/updateQuiz/{question_id}', [dropdownController::class,'updateQuiz'])->name('updateQuiz');
+    Route::get('/deleteQuestion/{question_id}', [dropdownController::class,'deleteQuestion'])->name('deleteQuestion');
+    
 });
 
 
