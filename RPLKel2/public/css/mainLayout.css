@@ -34,7 +34,6 @@ body{
     width: 100%;
     overflow: hidden;
     transition: all 0.35s ease-in-out;  
-    margin-left: 80px;
     
 }
 
@@ -42,17 +41,11 @@ body{
     width: 80px;
     min-width: 80px;
     z-index: 1000;
-    transition: all .35s ease-in-out;
+    transition: all .25s ease-in-out;
     display: flex;
     flex-direction: column;
     background-color: #008DDA;
     box-shadow: 2px 0px 10px rgb(155, 155, 155);
-    position: fixed;
-    height:100vh
-}
-
-.expanded{
-    margin-left: 260px;
 }
 
 #sidebar.expand{
@@ -221,7 +214,7 @@ span{
 #hamburger-logo:hover{
     color: #fff;
     background-color: #008DDA;
-    transition: .35s;
+    transition: .25s;
     border: 1px white solid
 }
 
@@ -233,43 +226,12 @@ span{
 }
 .fotoUser{
     margin-top:6px;
-    margin-right: 15px
+    margin-right: 15px;
+    border-radius: 50%;
 }
 
 .sidebar-active{
     background-color: #005F92;
     border-left: 2px solid #003A59
-}
-
-.navbar-fixed {
-    position: fixed;
-    z-index: 9999;
-    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-    --tw-bg-opacity: 0.6;
-    -webkit-backdrop-filter: blur(5px);
-            backdrop-filter: blur(5px);
-    box-shadow: inset 0px -1px 0 0 rgba(0, 0, 0, 0.2);
-  }
-
-nav.navbar{
-    position: fixed;
-    width: 190vh;
-    top: 0;
-    z-index: 9999;
-}
-
-
-.profile-expand{
-    margin-right: 20vh;
-    transition: all 0.35s ease-in-out;  
-}
-
-.profile{
-    transition: all 0.35s ease-in-out;
-}
-
-.content{
-    margin-top: 25px; /* Adjust this value to match the height of your navbar */
-    padding: 1rem;
 }
 

@@ -9,6 +9,7 @@ use App\Http\Controllers\dropdownController;
 use App\Http\Controllers\userPageController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\inputQuizController;
+use App\Http\Controllers\profileController;
 
 
 /*
@@ -71,3 +72,8 @@ Route::post('/materials', [MaterialController::class, 'store'])->name('materials
 Route::get('/materials/{id}/download', [MaterialController::class, 'download'])->name('materials.download');
 
 Route::get('/materials', [MaterialController::class, 'index'])->name('materials.index');
+
+#profile
+Route::get('/showProfile', [profileController::class, 'showProfile'])->name('userProfile.showProfile');
+Route::get('/editProfile', [profileController::class, 'editProfile'])->name('userProfile.editProfile');
+Route::put('/updateProfile/{id}', [profileController::class, 'updateProfile'])->name('userProfile.updateProfile');
