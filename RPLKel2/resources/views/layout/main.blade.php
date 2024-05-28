@@ -28,19 +28,15 @@
                     </div>
 
                     <!-- Tulisan di sebelah kanan navbar -->
-
-                    <div class="ml-auto d-flex user">
-                        <p class="namaUser">@yield('Name')</p>
-                        @if($user->ProfilePicture && file_exists(public_path('storage/' . $user->ProfilePicture)))
-                            <img class="fotoUser" src="{{ asset('storage/'.$user->ProfilePicture) }}" alt="User" width="24px" height="24px">
-                        @else
-                            <img class="fotoUser "src="{{ URL('img/userPhoto.png') }}" alt="Default User Photo" width="24px" height="24px">
-                        @endif
-
+                    <div class="profile">
+                        <div class="ml-auto d-flex user">
+                            <p class="namaUser">@yield('Name')</p>
+                            <img class="fotoUser" src="{{ URL('img/userPhoto.png') }}" width="24px" height="24px"alt="">
+                        </div>
                     </div>
                 </div>  
             </nav>
-
+            <div class="content">
                 @yield('content')
             </div>
         </div>
