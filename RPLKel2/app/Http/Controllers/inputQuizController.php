@@ -47,6 +47,7 @@ class inputQuizController extends Controller
             "Benar"=>'required',
             "imageQuestion"=>'mimes:png,jpg,jpeg|max:100000'
         ]);
+    
         
         $photoQuiz = $validateData['imageQuestion'];
         $fileName = date("Y-m-d H:i").$photoQuiz->getClientOriginalname();

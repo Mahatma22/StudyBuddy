@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\course;
 use App\Http\Controllers\coursepage;
-use App\Http\Controllers\MaterialController;
+use App\Http\Controllers\SubjectController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\dropdownController;
@@ -64,10 +64,10 @@ Route::get('/coursepage/{viewName}', [coursepage::class, 'index'])->name('course
 Route::get('/course', [course::class, 'index'])->name('course');
 
 #upload materi (admin)
-Route::get('/upload', [MaterialController::class, 'create'])->name('materials.create');
-Route::post('/materials', [MaterialController::class, 'store'])->name('materials.store');
+Route::get('/upload', [SubjectController::class, 'create'])->name('materials.create');
+Route::post('/materials', [SubjectController::class, 'store'])->name('subjects.store');
 
 #download materi (user)
-Route::get('/materials/{id}/download', [MaterialController::class, 'download'])->name('materials.download');
+Route::get('/materials/{id}/download', [SubjectController::class, 'download'])->name('materials.download');
 
-Route::get('/materials', [MaterialController::class, 'index'])->name('materials.index');
+Route::get('/materials', [SubjectController::class, 'index'])->name('materials.index');
