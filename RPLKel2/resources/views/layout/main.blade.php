@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('tittle')</title>
-    <link rel="stylesheet" href="css/mainLayout.css">
+    <link rel="stylesheet" href="{{URL('css/mainLayout.css')}}">
     @yield('css')
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">  
 </head>
@@ -22,12 +22,13 @@
                     <div class="navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <span class="navbar-keterangan">@yield('tittle')</span>
+                                <span class="navbar-keterangan">{{ session('userName') }}</span>
                             </li>
                         </ul>
                     </div>
 
                     <!-- Tulisan di sebelah kanan navbar -->
+
                     <div class="ml-auto d-flex user">
                         <p class="namaUser">@yield('Name')</p>
                         @if($user->ProfilePicture && file_exists(public_path('storage/' . $user->ProfilePicture)))
@@ -35,14 +36,17 @@
                         @else
                             <img class="fotoUser "src="{{ URL('img/userPhoto.png') }}" alt="Default User Photo" width="24px" height="24px">
                         @endif
+
                     </div>
                 </div>  
             </nav>
 
-            @yield('content')
+                @yield('content')
+            </div>
         </div>
     </div>    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>    <script src="{{ asset('js/mainJS.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>    
+    <script src="{{ asset('js/mainJS.js') }}"></script>
     @yield('javascript')
 </body>
 </html>
