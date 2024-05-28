@@ -32,14 +32,14 @@
                                 @foreach($quizSubject as $key => $quiz)
                                     <tr>
                                         <th scope="row">{{ $key + 1 }}</th>
-                                        <td>{{ $quiz['question_id'] }}</td>
+                                        <td>{{ $quiz['id'] }}</td>
                                         <td>{{ $quiz['question'] }}</td>
                                         <td>
                                         @include('InputQuizAdmin.asset.seeAnswerModal') 
                                         </td>
                                         <td >
                                             @include('InputQuizAdmin.asset.updateQuestionModal') 
-                                            <a href="/deleteQuestion/{{$quiz['question_id']}}" class="btn btn-primary btn-sm">Delete</a>
+                                            <a href="/deleteQuestion/{{$quiz['question_id']}}" class="btn btn-danger btn-sm">Delete</a>
                                         </td>
                                     </tr>
                                 @endforeach
