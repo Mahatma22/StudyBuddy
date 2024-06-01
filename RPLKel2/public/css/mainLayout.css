@@ -270,7 +270,7 @@ nav.navbar{
 }
 
 .content{
-    margin-top: 25px; /* Adjust this value to match the height of your navbar */
+    margin-top: 2rem; /* Adjust this value to match the height of your navbar */
     padding: 1rem;
 }
 

@@ -1,15 +1,16 @@
 <?php
 
 use App\Http\Controllers\course;
+use App\Http\Controllers\quizUserController;
 use App\Http\Controllers\coursepage;
-use App\Http\Controllers\MaterialController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\profileController;
 use App\Http\Controllers\dropdownController;
+use App\Http\Controllers\MaterialController;
 use App\Http\Controllers\userPageController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\inputQuizController;
-use App\Http\Controllers\profileController;
 
 
 /*
@@ -27,6 +28,8 @@ use App\Http\Controllers\profileController;
 // route untuk User
 Route::group(['middleware' => 'UserAuthCheck'], function () {   
     Route::get('/dashboardUser', [dashboardController::class, 'dashboardUser'])->name('dashboardUser');
+    Route::get('/quizUser/{subject_id}', [quizUserController::class,'show']);
+    Route::post('/quizUser', [quizUserController::class,'compare']);
 });
 
 // route untuk Admin
@@ -77,3 +80,5 @@ Route::get('/materials', [MaterialController::class, 'index'])->name('materials.
 Route::get('/showProfile', [profileController::class, 'showProfile'])->name('userProfile.showProfile');
 Route::get('/editProfile', [profileController::class, 'editProfile'])->name('userProfile.editProfile');
 Route::put('/updateProfile/{id}', [profileController::class, 'updateProfile'])->name('userProfile.updateProfile');
+
+

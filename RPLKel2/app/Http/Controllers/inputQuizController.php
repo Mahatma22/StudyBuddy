@@ -37,24 +37,25 @@ class inputQuizController extends Controller
     {
         
         $validateData = $request->validate([
-            "course"=>'required',
-            "subject"=>'required',
-            "question"=>'required',
-            "AnswerA"=>'required',
-            "AnswerB"=>'required',
-            "AnswerC"=>'required',
-            "AnswerD"=>'required',
-            "Benar"=>'required',
-            "imageQuestion"=>'mimes:png,jpg,jpeg|max:100000'
+            "course" => 'required',
+            "subject" => 'required',
+            "question" => 'required',
+            "AnswerA" => 'required',
+            "AnswerB" => 'required',
+            "AnswerC" => 'required',
+            "AnswerD" => 'required',
+            "Benar" => 'required',
+            "imageQuestion" => 'mimes:png,jpg,jpeg|max:100000|nullable'
         ]);
-        
-        $photoQuiz = $validateData['imageQuestion'];
-        $fileName = date("Y-m-d H:i").$photoQuiz->getClientOriginalname();
-        $path = '/picture/photo-quiz/'.$fileName;
-
-
-        Storage::disk('public')->put($path,file_get_contents($photoQuiz));
-
+    
+        $fileName = null;
+        if ($request->hasFile('imageQuestion')) {
+            $photoQuiz = $validateData['imageQuestion'];
+            $fileName = date("Y-m-d H:i") . $photoQuiz->getClientOriginalName();
+            $path = 'picture/photo-quiz/' . $fileName;
+            Storage::disk('public')->put($path, file_get_contents($photoQuiz));
+        }
+    
         $answers = [
             $validateData['AnswerA'],
             $validateData['AnswerB'],
@@ -63,34 +64,34 @@ class inputQuizController extends Controller
         ];
     
         if (count($answers) !== count(array_unique($answers))) {
-            return back()->with("Fail","Jawaban yang Anda Inputkan Tidak Boleh Sama");
+            return back()->with("Fail", "Jawaban yang Anda Inputkan Tidak Boleh Sama");
         }
-
-        $answer = [            
+    
+        $answer = [
             "A" => [
                 "label" => $answers[0],
                 "nilai" => false
             ],
-            "B" =>[
+            "B" => [
                 "label" => $answers[1],
                 "nilai" => false
             ],
-            "C" =>[
+            "C" => [
                 "label" => $answers[2],
                 "nilai" => false
             ],
-            "D" =>[
+            "D" => [
                 "label" => $answers[3],
-                    "nilai" => false
+                "nilai" => false
             ]
         ];
-
+    
         $answer[$validateData["Benar"]]["nilai"] = true;
-            
+    
         $answerConvert = [
             "answer" => $answer
         ];
-
+    
         $inputDB = question::create([
             "question" => $validateData["question"],
             "answer" => json_encode($answerConvert["answer"]),
@@ -98,13 +99,12 @@ class inputQuizController extends Controller
             "subject_id" => $validateData["subject"],
             "course_id" => $validateData["course"]
         ]);
-
+    
         if ($inputDB) {
-            return back()->with("Success","Soal Berhasil Ditambahkan");
+            return back()->with("Success", "Soal Berhasil Ditambahkan");
         } else {
-            return back()->with("Fail","Soal Gagal Ditambahkan");
+            return back()->with("Fail", "Soal Gagal Ditambahkan");
         }
-
 
     }
 
