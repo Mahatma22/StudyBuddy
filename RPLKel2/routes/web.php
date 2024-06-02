@@ -60,7 +60,6 @@ Route::post('/dataLogin', [AuthController::class, 'loginUser'])->name('dataLogin
 Route::post('/dataAdmin', [AuthController::class, 'loginAdmin'])->name('dataAdmin');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/coursepage/{viewName}', [coursepage::class, 'index'])->name('coursepage');
 Route::get('/course', [course::class, 'index'])->name('course');
 
 #upload materi (admin)
@@ -68,6 +67,6 @@ Route::get('/upload', [SubjectController::class, 'create'])->name('materials.cre
 Route::post('/materials', [SubjectController::class, 'store'])->name('subjects.store');
 
 #download materi (user)
-Route::get('/materials/{id}/download', [SubjectController::class, 'download'])->name('materials.download');
+Route::get('/materials/{subject_id}', [SubjectController::class, 'download'])->name('materials.download');
 
-Route::get('/materials', [SubjectController::class, 'index'])->name('materials.index');
+Route::get('/coursepage/{course_id}', [SubjectController::class, 'index'])->name('coursepage');

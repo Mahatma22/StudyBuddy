@@ -14,11 +14,7 @@ class coursepage extends Controller
     {
     
         $views = [
-            "fungsi", 
-            "gbd", 
-            "gbr", 
-            "stat", 
-            "data"
+            "matematika"
         ];
 
         if(in_array($viewName, $views)){
@@ -26,7 +22,7 @@ class coursepage extends Controller
         }else{
             abort(404);
         }
-    
+        
     }
 
     /**

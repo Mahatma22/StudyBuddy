@@ -45,21 +45,21 @@ class SubjectController extends Controller
 }
 
 
-    public function download($id)
+    public function download($subject_id)
     {
-        $material = Subject::findOrFail($id);
+        $material = Subject::findOrFail($subject_id);
         
         // Cek apakah file ada di storage
-        if (Storage::disk('public')->exists($material->file_path)) {
-            return Storage::disk('public')->download($material->file_path);
+        if (Storage::disk('public')->exists($material->subject_download)) {
+            return Storage::disk('public')->download($material->subject_download);
         }
 
-        return redirect()->back()->withErrors('File tidak ditemukan');
+        return redirect()->back()->with('error', 'File not found!');;
     }
 
-    public function index()
+    public function index($course_id)
     {
-        $materials = Subject::all();
-        return view('materials.index', compact('materials'));
+        $subject = Subject::where('course_id', $course_id)->get();
+        return view("course.matematika", compact("subject"));
     }
 }
