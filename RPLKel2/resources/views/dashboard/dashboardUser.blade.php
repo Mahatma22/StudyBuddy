@@ -247,7 +247,7 @@
                                     <img src="{{ URL('img/math image.png') }}" class="card-img-top" alt="Image for Card 1">
                                         <div class="card-body">
                                             <h5 class="card-title">Mathematics</h5>
-                                            <a href="" class="btn btn-primary">Go to Course</a>
+                                            <a href="{{route('coursepage', "1")}}" class="btn btn-primary">Go to Course</a>
                                         </div>
                                     </div>
                                 </div>
@@ -257,7 +257,7 @@
                                     <img src="{{ URL('img/physics image.png') }}" class="card-img-top" alt="Image for Card 2">
                                         <div class="card-body">
                                             <h5 class="card-title">Physics</h5>
-                                            <a href=" " class="btn btn-primary">Go to Course</a>
+                                            <a href="{{route('coursepage', "2")}} " class="btn btn-primary">Go to Course</a>
                                         </div>
                                     </div>
                                 </div>
@@ -267,7 +267,7 @@
                                     <img src="{{ URL('img/biology image.png') }}" class="card-img-top" alt="Image for Card 3">
                                         <div class="card-body">
                                             <h5 class="card-title">Biology</h5>
-                                            <a href=" " class="btn btn-primary">Go to Course</a>
+                                            <a href="{{route('coursepage', "3")}} " class="btn btn-primary">Go to Course</a>
                                         </div>
                                     </div>
                                 </div>
@@ -277,7 +277,7 @@
                                     <img src="{{ URL('img/chemistry image.png') }}" class="card-img-top" alt="Image for Card 4">
                                         <div class="card-body">
                                             <h5 class="card-title">Chemistry</h5>
-                                            <a href=" " class="btn btn-primary">Go to Course</a>
+                                            <a href="{{route('coursepage', "4")}} " class="btn btn-primary">Go to Course</a>
                                         </div>
                                     </div>
                                 </div>
@@ -294,7 +294,7 @@
                                     <img src="{{ URL('img/course image.jpg') }}" class="card-img-top" alt="Image for Card 5">
                                         <div class="card-body">
                                             <h5 class="card-title">English</h5>
-                                            <a href=" " class="btn btn-primary">Go to Course</a>
+                                            <a href="{{route('coursepage', "5")}} " class="btn btn-primary">Go to Course</a>
                                         </div>
                                     </div>
                                 </div>

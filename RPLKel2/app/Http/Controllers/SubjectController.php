@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Subject;
+use App\Models\Course;
 use Illuminate\Support\Facades\Storage;
 
 class SubjectController extends Controller
@@ -59,7 +60,8 @@ class SubjectController extends Controller
 
     public function index($course_id)
     {
+        $course = course::where('course_id', $course_id)->get(['course_name']);
         $subject = Subject::where('course_id', $course_id)->get();
-        return view("course.matematika", compact("subject"));
+        return view("course.matematika", compact("subject"), compact("course"));
     }
 }

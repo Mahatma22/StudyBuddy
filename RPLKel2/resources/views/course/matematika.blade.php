@@ -1,5 +1,9 @@
 @extends('layout.main')
 
+@foreach ($course as $c)
+@section("tittle", $c['course_name'])
+@endforeach
+
 @section("content")
 
 <div class="container">
