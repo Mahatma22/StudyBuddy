@@ -3,11 +3,11 @@
 use App\Http\Controllers\course;
 use App\Http\Controllers\quizUserController;
 use App\Http\Controllers\coursepage;
+use App\Http\Controllers\SubjectController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\profileController;
 use App\Http\Controllers\dropdownController;
-use App\Http\Controllers\MaterialController;
 use App\Http\Controllers\userPageController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\inputQuizController;
@@ -64,21 +64,18 @@ Route::post('/dataLogin', [AuthController::class, 'loginUser'])->name('dataLogin
 Route::post('/dataAdmin', [AuthController::class, 'loginAdmin'])->name('dataAdmin');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/coursepage/{viewName}', [coursepage::class, 'index'])->name('coursepage');
 Route::get('/course', [course::class, 'index'])->name('course');
 
 #upload materi (admin)
-Route::get('/upload', [MaterialController::class, 'create'])->name('materials.create');
-Route::post('/materials', [MaterialController::class, 'store'])->name('materials.store');
+Route::get('/upload', [SubjectController::class, 'create'])->name('materials.create');
+Route::post('/materials', [SubjectController::class, 'store'])->name('subjects.store');
 
 #download materi (user)
-Route::get('/materials/{id}/download', [MaterialController::class, 'download'])->name('materials.download');
+Route::get('/materials/{subject_id}', [SubjectController::class, 'download'])->name('materials.download');
 
-Route::get('/materials', [MaterialController::class, 'index'])->name('materials.index');
+Route::get('/coursepage/{course_id}', [SubjectController::class, 'index'])->name('coursepage');
 
 #profile
 Route::get('/showProfile', [profileController::class, 'showProfile'])->name('userProfile.showProfile');
 Route::get('/editProfile', [profileController::class, 'editProfile'])->name('userProfile.editProfile');
 Route::put('/updateProfile/{id}', [profileController::class, 'updateProfile'])->name('userProfile.updateProfile');
-
-

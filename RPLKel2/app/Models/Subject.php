@@ -10,4 +10,5 @@ class Subject extends Model
     use HasFactory;
     protected $table ='subject';
     protected $fillable = ['subject_name', 'course_id', 'video_link'];
+    protected $primaryKey = 'subject_id';
 }
