@@ -2,7 +2,7 @@
 @section('tittle', 'Dashboard')
 
 @section('css')
-<link rel="stylesheet" href="css/inputQuiz.css">
+<link rel="stylesheet" href="{{ URL('css/inputQuiz.css')}}">
 <style>
 </style>
 @endsection

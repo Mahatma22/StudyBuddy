@@ -233,7 +233,8 @@ span{
 }
 .fotoUser{
     margin-top:6px;
-    margin-right: 15px
+    margin-right: 15px;
+    border-radius: 50%;
 }
 
 .sidebar-active{
@@ -269,7 +270,7 @@ nav.navbar{
 }
 
 .content{
-    margin-top: 3rem; /* Adjust this value to match the height of your navbar */
+    margin-top: 2rem; /* Adjust this value to match the height of your navbar */
     padding: 1rem;
 }
 

@@ -16,9 +16,9 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('Name');
-            $table->integer('Phone');
+            $table->string('Phone');
             $table->string('School');
-            $table->string('ProfilePicture')->default('');
+            $table->string('ProfilePicture')->nullable();
             $table->timestamps();
         });
     }
