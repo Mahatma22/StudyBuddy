@@ -4,12 +4,12 @@
 @section('Name', $Name)
 
 @section('css')
-<link rel="stylesheet" href="css/dashboard.css"> 
+<link rel="stylesheet" href="css/dashboard.css">
 @endsection
 
 @section('content')
 
-<div class="d-flex justify content center"> 
+<div class="d-flex justify content center">
     <!-- Farabi -->
     <div class="col-md-6 pr">
         <div id="courseProgressCard" class="card">
@@ -230,7 +230,7 @@
         </div>
     </div>
 </div>
-<!-- Zaim -->
+    <!-- Zaim -->
     <div id="courseOverviewCard" class="card">
         <div class="card-header bg-white font-weight-bold">
                 Course Overview
@@ -307,7 +307,7 @@
                     <span class="carousel-control-prev-icon" aria-hidden="true" style="margin-left:0px"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                
+
                 <button class="carousel-control-next bg-black" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next" style="width: 25px;height: 25px; border-radius:100%; margin-top:130px; right: 3px">
                     <span class="carousel-control-next-icon" aria-hidden="true" style="margin-left:0px"></span>
                     <span class="visually-hidden">Next</span>
