@@ -131,7 +131,7 @@
                     </div>
                     <div class="col-sm-4 text-center font-weight-bold">
                         <div class="d-flex justify-content-center">
-                            <a href="#" class="btn btn-primary btn-sm">Attempt Quiz</a>
+                            <a href="{{ route('feedback.form') }}" class="btn btn-primary btn-sm">Attempt Quiz</a>
                         </div>
                     </div>
                 </div>

@@ -11,6 +11,7 @@ use App\Http\Controllers\dropdownController;
 use App\Http\Controllers\userPageController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\inputQuizController;
+use App\Http\Controllers\feedbackController;
 
 
 /*
@@ -79,3 +80,6 @@ Route::get('/coursepage/{course_id}', [SubjectController::class, 'index'])->name
 Route::get('/showProfile', [profileController::class, 'showProfile'])->name('userProfile.showProfile');
 Route::get('/editProfile', [profileController::class, 'editProfile'])->name('userProfile.editProfile');
 Route::put('/updateProfile/{id}', [profileController::class, 'updateProfile'])->name('userProfile.updateProfile');
+
+Route::get('/feedback', [FeedbackController::class, 'showFeedback'])->name('feedback.form');
+Route::post('/feedback', [FeedbackController::class, 'submitFeedback'])->name('feedback.submit');
