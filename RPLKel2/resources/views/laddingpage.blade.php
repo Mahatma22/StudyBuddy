@@ -132,15 +132,9 @@
                         Login
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-<<<<<<< HEAD
                         <li><a class="dropdown-item" href="{{ route('loginAdmin') }}">As Admin</a></li>
-                        <li><hr class="dropdown-divider"></li> 
-                        <li><a class="dropdown-item" href="{{ route('loginUser') }}">As User</a></li>
-=======
-                        <li><a class="dropdown-item" href="#">As Admin</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">As User</a></li>
->>>>>>> 1fb11bd378efcb123419f1af967c70aa4fa2e991
+                        <li><a class="dropdown-item" href="{{ route('loginUser') }}">As User</a></li>
                     </ul>
                 </li>
             </ul>
