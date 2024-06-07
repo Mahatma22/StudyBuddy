@@ -9,7 +9,7 @@ class feedbackController extends Controller
 {
     public function showFeedback ()
     {
-        return view('feedback');
+        return view('feedback.feedback');
     }
 
     public function submitFeedback(Request $request)
@@ -34,5 +34,10 @@ class feedbackController extends Controller
 
         // Redirect dengan pesan sukses
         return redirect()->route('feedback.form')->with('success', 'Terima kasih atas masukan Anda!');
+    }
+
+    public function resultFeedback ()
+    {
+        return view('feedback.resultFeedback');
     }
 }
