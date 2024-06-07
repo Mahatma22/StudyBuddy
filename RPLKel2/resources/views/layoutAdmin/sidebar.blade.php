@@ -1,8 +1,8 @@
 <aside id="sidebar">
     <div class="d-flex">
         <a href="#" class="btn" id="toggle-btn">
-            <img src="{{ URL('img/tempIcon.png') }}" width="24px" height="24px"alt="">
-        </a>    
+            <img src="{{ URL('img/LogoBuddy.png') }}" width="32px" height="32px"alt="">
+        </a>
         <div class="sidebar-logo">
             <a href="#">StudyBuddy</a>
         </div>

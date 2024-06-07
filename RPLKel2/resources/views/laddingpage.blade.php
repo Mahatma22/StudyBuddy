@@ -11,9 +11,9 @@
     .oval-button {
         width: 110px;
         height: 40px;
-        border-radius: 20px; 
-        background-color: #007bff; 
-        color: #fff; 
+        border-radius: 20px;
+        background-color: #007bff;
+        color: #fff;
         border: 3px solid #FFFFFF;
         display: flex;
         flex-direction: row;
@@ -26,7 +26,7 @@
     }
 
     .oval-button:hover {
-        background-color: #0056b3; 
+        background-color: #0056b3;
     }
 
     body, html {
@@ -80,27 +80,27 @@
 
     .container {
         display: flex;
-        justify-content: center; 
-        align-items: center; 
-        height: 300px; 
+        justify-content: center;
+        align-items: center;
+        height: 300px;
     }
 
     .test {
-        width: 350px; 
+        width: 350px;
         height: 450px;
-        position: relative; 
-        left: 950px; 
+        position: relative;
+        left: 950px;
         top: 150px;
         border-radius: 28px;
         outline: none;
     }
 
     .test2 {
-        width: 350px; 
-        height: 420px; 
-        position: relative; 
+        width: 350px;
+        height: 420px;
+        position: relative;
         left: 500px;
-        top: 220px; 
+        top: 220px;
         border-radius: 28px;
         outline: none;
     }
@@ -117,7 +117,7 @@
     <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand" href="#" style="padding-bottom: 10px;">
-            <img src="{{ URL('img/LogoStuddyBuddy.png')}}" style="height: 20px; margin-right: 10px;">StudyBuddy
+            <img src="{{ URL('img/LogoBuddy.png')}}" style="height: 32px; margin-right: 10px;">StudyBuddy
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -133,7 +133,7 @@
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="{{ route('loginAdmin') }}">As Admin</a></li>
-                        <li><hr class="dropdown-divider"></li> 
+                        <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="{{ route('loginUser') }}">As User</a></li>
                     </ul>
                 </li>
@@ -144,12 +144,12 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 content-left">
-                <div class="title">StuddyBuddy</div>
+                <div class="title">StudyBuddy</div>
                 <div class="landing-page">
                     <p class="learning-management-system">Learning Management System</p>
                 </div>
                 <span class="Isi">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae nesciunt, voluptates placeat cupiditate hic architecto ullam veritatis enim a dolor error illo amet tempore laboriosam id aspernatur omnis. Sit necessitatibus, impedit ea soluta inventore atque enim, modi eveniet quis quas itaque odit distinctio possimus perspiciatis neque corrupti. Pariatur, adipisci quas.
+                    StudyBuddy, aplikasi belajar online untuk siswa SMA, hadir dengan solusi lengkap untuk membantumu meraih nilai terbaik! Dapatkan materi pelajaran yang lengkap, video pembelajaran yang menarik, quiz interaktif, forum diskusi, dan berbagai fitur lainnya untuk membantumu belajar lebih efektif dan menyenangkan. Download StudyBuddy sekarang dan rasakan manfaatnya!
                 </span>
                 <div class="landing-page">
                     <span class="learning-management-system">Learning Management System</span>

@@ -11,6 +11,7 @@ use App\Http\Controllers\dropdownController;
 use App\Http\Controllers\userPageController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\inputQuizController;
+use App\Http\Controllers\feedbackController;
 
 
 /*
@@ -26,14 +27,14 @@ use App\Http\Controllers\inputQuizController;
 
 
 // route untuk User
-Route::group(['middleware' => 'UserAuthCheck'], function () {   
+Route::group(['middleware' => 'UserAuthCheck'], function () {
     Route::get('/dashboardUser', [dashboardController::class, 'dashboardUser'])->name('dashboardUser');
     Route::get('/quizUser/{subject_id}', [quizUserController::class,'show']);
     Route::post('/quizUser', [quizUserController::class,'compare']);
 });
 
 // route untuk Admin
-Route::group(['middleware' => 'AdminAuthCheck'], function () {    
+Route::group(['middleware' => 'AdminAuthCheck'], function () {
     Route::get('/dashboardAdmin', [dashboardController::class, 'dashboardAdmin'])->name('dashboardAdmin');
     Route::get('/userPage', [userPageController::class, 'show'])->name('userPage');
     Route::get('/delete-user/{id}', [userPageController::class, 'delete'])->name('delete-user');
@@ -45,7 +46,7 @@ Route::group(['middleware' => 'AdminAuthCheck'], function () {
     Route::get('/detailQuiz/{course_id}', [dropdownController::class,'showQuizPage'])->name('detailQuiz');
     Route::post('/updateQuiz/{question_id}', [dropdownController::class,'updateQuiz'])->name('updateQuiz');
     Route::get('/deleteQuestion/{question_id}', [dropdownController::class,'deleteQuestion'])->name('deleteQuestion');
-    
+
 });
 
 
@@ -79,3 +80,6 @@ Route::get('/coursepage/{course_id}', [SubjectController::class, 'index'])->name
 Route::get('/showProfile', [profileController::class, 'showProfile'])->name('userProfile.showProfile');
 Route::get('/editProfile', [profileController::class, 'editProfile'])->name('userProfile.editProfile');
 Route::put('/updateProfile/{id}', [profileController::class, 'updateProfile'])->name('userProfile.updateProfile');
+
+Route::get('/feedback', [FeedbackController::class, 'showFeedback'])->name('feedback.form');
+Route::post('/feedback', [FeedbackController::class, 'submitFeedback'])->name('feedback.submit');
