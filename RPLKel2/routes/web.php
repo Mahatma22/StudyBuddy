@@ -83,3 +83,4 @@ Route::put('/updateProfile/{id}', [profileController::class, 'updateProfile'])->
 
 Route::get('/feedback', [FeedbackController::class, 'showFeedback'])->name('feedback.form');
 Route::post('/feedback', [FeedbackController::class, 'submitFeedback'])->name('feedback.submit');
+Route::get('/resultFeedback', [FeedbackController::class, 'resultFeedback'])->name('feedback.result');

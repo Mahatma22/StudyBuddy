@@ -2,7 +2,7 @@
 @section('tittle', 'Dashboard')
 
 @section('css')
-<link rel="stylesheet" href="css/dashboardAdmin.css"> 
+<link rel="stylesheet" href="css/dashboardAdmin.css">
 @endsection
 
 @section('content')
@@ -59,7 +59,7 @@
 
 
     <section class="mx-auto">
-        <div class="d-flex justify-content-center"> 
+        <div class="d-flex justify-content-center">
             <div id="courseProgressCard" class="card">
                 <div class="card-header bg-white font-weight-bold">
                     Forum
@@ -225,7 +225,7 @@
                         </div>
                         <div class="col-sm-4 text-center font-weight-bold">
                             <div class="d-flex justify-content-center">
-                                <a href="#" class="btn btn-primary btn-sm">Attempt Quiz</a>
+                                <a href="{{ route('feedback.result') }}" class="btn btn-primary btn-sm">Attempt Quiz</a>
                             </div>
                         </div>
                     </div>
@@ -247,30 +247,7 @@
                         </div>
                         <div class="col-sm-4 text-center font-weight-bold">
                             <div class="d-flex justify-content-center">
-                                <a href="#" class="btn btn-primary btn-sm">Attempt Quiz</a>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-
-                    <div class="row">
-                        <div class="col-sm-4 text-center font-weight-bold">
-                            <div class="row text-center font-weight-normal">
-                                <div class="col">
-                                    Mathematics
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 text-center font-weight-bold">
-                            <div class="row text-center font-weight-normal">
-                                <div class="col">
-                                    Integral
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 text-center font-weight-bold">
-                            <div class="d-flex justify-content-center">
-                                <a href="#" class="btn btn-primary btn-sm">Attempt Quiz</a>
+                                <a href="{{ route('feedback.result') }}" class="btn btn-primary btn-sm">Attempt Quiz</a>
                             </div>
                         </div>
                     </div>
@@ -293,7 +270,30 @@
                         </div>
                         <div class="col-sm-4 text-center font-weight-bold">
                             <div class="d-flex justify-content-center">
-                                <a href="#" class="btn btn-primary btn-sm">Attempt Quiz</a>
+                                <a href="{{ route('feedback.result') }}" class="btn btn-primary btn-sm">Attempt Quiz</a>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-sm-4 text-center font-weight-bold">
+                            <div class="row text-center font-weight-normal">
+                                <div class="col">
+                                    Mathematics
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 text-center font-weight-bold">
+                            <div class="row text-center font-weight-normal">
+                                <div class="col">
+                                    Integral
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 text-center font-weight-bold">
+                            <div class="d-flex justify-content-center">
+                                <a href="{{ route('feedback.result') }}" class="btn btn-primary btn-sm">Attempt Quiz</a>
                             </div>
                         </div>
                     </div>
@@ -315,7 +315,7 @@
                         </div>
                         <div class="col-sm-4 text-center font-weight-bold">
                             <div class="d-flex justify-content-center">
-                                <a href="#" class="btn btn-primary btn-sm">Attempt Quiz</a>
+                                <a href="{{ route('feedback.result') }}" class="btn btn-primary btn-sm">Attempt Quiz</a>
                             </div>
                         </div>
                     </div>
