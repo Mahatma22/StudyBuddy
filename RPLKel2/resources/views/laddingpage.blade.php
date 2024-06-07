@@ -144,12 +144,12 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 content-left">
-                <div class="title">StuddyBuddy</div>
+                <div class="title">StudyBuddy</div>
                 <div class="landing-page">
                     <p class="learning-management-system">Learning Management System</p>
                 </div>
                 <span class="Isi">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae nesciunt, voluptates placeat cupiditate hic architecto ullam veritatis enim a dolor error illo amet tempore laboriosam id aspernatur omnis. Sit necessitatibus, impedit ea soluta inventore atque enim, modi eveniet quis quas itaque odit distinctio possimus perspiciatis neque corrupti. Pariatur, adipisci quas.
+                    StudyBuddy, aplikasi belajar online untuk siswa SMA, hadir dengan solusi lengkap untuk membantumu meraih nilai terbaik! Dapatkan materi pelajaran yang lengkap, video pembelajaran yang menarik, quiz interaktif, forum diskusi, dan berbagai fitur lainnya untuk membantumu belajar lebih efektif dan menyenangkan. Download StudyBuddy sekarang dan rasakan manfaatnya!
                 </span>
                 <div class="landing-page">
                     <span class="learning-management-system">Learning Management System</span>
