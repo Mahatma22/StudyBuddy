@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('layoutAdmin.main')
 @section('tittle', 'Feedback Results')
 
 @section('css')

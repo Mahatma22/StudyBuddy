@@ -40,6 +40,10 @@ class feedbackController extends Controller
 
     public function resultFeedback ()
     {
-        return view('feedback.resultFeedback');
+
+        $feedbacks = Masukan::all();
+
+        return view('feedback.resultFeedback', ['feedbacks' => $feedbacks]);
+
     }
 }
