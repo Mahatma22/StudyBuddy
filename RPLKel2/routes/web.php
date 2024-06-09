@@ -87,5 +87,6 @@ Route::get('/feedback', [feedbackController::class, 'showFeedback'])->name('feed
 Route::post('/submitFeedback', [feedbackController::class, 'submitFeedback'])->name('submitFeedback');
 Route::get('/resultFeedback', [feedbackController::class, 'resultFeedback'])->name('feedback.result');
 
+
 #faq
 Route::get('/FAQ', [FAQController::class, 'showFAQ'])->name('showFAQ');

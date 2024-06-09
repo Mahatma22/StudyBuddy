@@ -44,6 +44,13 @@ class feedbackController extends Controller
         $feedbacks = Masukan::all();
 
         return view('feedback.resultFeedback', ['feedbacks' => $feedbacks]);
+    }
 
+    public function resultFeedbackDashboard ()
+    {
+
+        $feedbacks = Masukan::all();
+
+        return view('dashboard.dashboardAdmin', ['feedbacks' => $feedbacks]);
     }
 }
