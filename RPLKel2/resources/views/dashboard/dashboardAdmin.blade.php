@@ -191,135 +191,30 @@
                     <hr>
                 </div>
             </div>
+
+            <!--feedback-->
             <div id="quizCard" class="card ms-5">
                 <div class="card-header bg-white font-weight-bold">
                     Feedback
                 </div>
                 <div class="card-body">
                     <div class="row subject">
-                        <div class="col-sm-4 text-center font-weight-bold">
-                            Course
-                        </div>
-                        <div class="col-sm-4 text-center font-weight-bold">
-                            Subject
-                        </div>
-                        <div class="col-sm-4 text-center font-weight-bold">
-                            Action
-                        </div>
+                        <div class="col-sm-4 text-center font-weight-bold">Nama</div>
+                        <div class="col-sm-4 text-center font-weight-bold">Email</div>
+                        <div class="col-sm-4 text-center font-weight-bold">Rating</div>
                     </div>
                     <hr>
+                    @foreach($feedbacks as $feedback)
                     <div class="row">
-                        <div class="col-sm-4 text-center font-weight-bold">
-                            <div class="row text-center font-weight-normal">
-                                <div class="col">
-                                    Mathematics
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 text-center font-weight-bold">
-                            <div class="row text-center font-weight-normal">
-                                <div class="col">
-                                    Integral
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 text-center font-weight-bold">
-                            <div class="d-flex justify-content-center">
-                                <a href="{{ route('feedback.result') }}" class="btn btn-primary btn-sm">Attempt Quiz</a>
-                            </div>
-                        </div>
+                        <div class="col-sm-4 text-center font-weight-normal">{{ $feedback->nama_lengkap }}</div>
+                        <div class="col-sm-4 text-center font-weight-normal">{{ $feedback->email }}</div>
+                        <div class="col-sm-4 text-center font-weight-normal">{{ $feedback->rating }}</div>
                     </div>
                     <hr>
-                    <div class="row">
-                        <div class="col-sm-4 text-center font-weight-bold">
-                            <div class="row text-center font-weight-normal">
-                                <div class="col">
-                                    Mathematics
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 text-center font-weight-bold">
-                            <div class="row text-center font-weight-normal">
-                                <div class="col">
-                                    Integral
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 text-center font-weight-bold">
-                            <div class="d-flex justify-content-center">
-                                <a href="{{ route('feedback.result') }}" class="btn btn-primary btn-sm">Attempt Quiz</a>
-                            </div>
-                        </div>
+                    @endforeach
+                    <div class="d-flex justify-content-start">
+                        <a href="{{ route('feedback.result') }}" class="btn btn-primary btn-sm">Lihat Selengkapnya</a>
                     </div>
-                    <hr>
-
-                    <div class="row">
-                        <div class="col-sm-4 text-center font-weight-bold">
-                            <div class="row text-center font-weight-normal">
-                                <div class="col">
-                                    Mathematics
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 text-center font-weight-bold">
-                            <div class="row text-center font-weight-normal">
-                                <div class="col">
-                                    Integral
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 text-center font-weight-bold">
-                            <div class="d-flex justify-content-center">
-                                <a href="{{ route('feedback.result') }}" class="btn btn-primary btn-sm">Attempt Quiz</a>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-
-                    <div class="row">
-                        <div class="col-sm-4 text-center font-weight-bold">
-                            <div class="row text-center font-weight-normal">
-                                <div class="col">
-                                    Mathematics
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 text-center font-weight-bold">
-                            <div class="row text-center font-weight-normal">
-                                <div class="col">
-                                    Integral
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 text-center font-weight-bold">
-                            <div class="d-flex justify-content-center">
-                                <a href="{{ route('feedback.result') }}" class="btn btn-primary btn-sm">Attempt Quiz</a>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-sm-4 text-center font-weight-bold">
-                            <div class="row text-center font-weight-normal">
-                                <div class="col">
-                                Mathematics
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 text-center font-weight-bold">
-                            <div class="row text-center font-weight-normal">
-                                <div class="col">
-                                    Integral
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 text-center font-weight-bold">
-                            <div class="d-flex justify-content-center">
-                                <a href="{{ route('feedback.result') }}" class="btn btn-primary btn-sm">Attempt Quiz</a>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
                 </div>
             </div>
         </div>
