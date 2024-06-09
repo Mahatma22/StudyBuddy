@@ -81,6 +81,7 @@ Route::get('/showProfile', [profileController::class, 'showProfile'])->name('use
 Route::get('/editProfile', [profileController::class, 'editProfile'])->name('userProfile.editProfile');
 Route::put('/updateProfile/{id}', [profileController::class, 'updateProfile'])->name('userProfile.updateProfile');
 
-Route::get('/feedback', [FeedbackController::class, 'showFeedback'])->name('feedback.form');
-Route::post('/feedback', [FeedbackController::class, 'submitFeedback'])->name('feedback.submit');
-Route::get('/resultFeedback', [FeedbackController::class, 'resultFeedback'])->name('feedback.result');
+Route::get('/feedback', [feedbackController::class, 'showFeedback'])->name('feedback.form');
+Route::post('/submitFeedback', [feedbackController::class, 'submitFeedback'])->name('submitFeedback');
+Route::get('/resultFeedback', [feedbackController::class, 'resultFeedback'])->name('feedback.result');
+
