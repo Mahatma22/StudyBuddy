@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('tittle', 'Feedback')
+@section('tittle', 'Frequently Asked Question')
 
 @section('css')
 <link rel="stylesheet" href="css/faq.css">
@@ -20,10 +20,10 @@
 <body>
 
 <div class="container mt-5">
-    <div class="faq-header">
+    {{-- <div class="faq-header">
         <h2 class="p-3 bg-light rounded">Frequently Asked Questions</h2>
-    </div>
-    
+    </div> --}}
+
     <div id="faqAccordion">
         <!-- FAQ Item 1 -->
         <div class="card">
@@ -43,7 +43,7 @@
                     </div>
             </div>
         </div>
-        
+
         <!-- FAQ Item 2 -->
         <div class="card">
             <div class="card-header" id="headingTwo">
@@ -85,7 +85,7 @@
             <div class="card-header" id="headingFour">
                 <h5 class="mb-0">
                     <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                        <span class="h5">Apakah saya bisa berdiskusi dengan teman-teman di aplikasi StudyBuddy?</span> 
+                        <span class="h5">Apakah saya bisa berdiskusi dengan teman-teman di aplikasi StudyBuddy?</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down collapse-icon" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
                         </svg>
@@ -103,7 +103,7 @@
             <div class="card-header" id="headingFive">
                 <h5 class="mb-0">
                     <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                        <span class="h5">Bagaimana cara menonton video pembelajaran di StudyBuddy?</span> 
+                        <span class="h5">Bagaimana cara menonton video pembelajaran di StudyBuddy?</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down collapse-icon" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
                         </svg>
@@ -120,7 +120,7 @@
             <div class="card-header" id="headingSix">
                 <h5 class="mb-0">
                     <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                        <span class="h5">Apakah saya perlu membuat akun untuk menggunakan StudyBuddy?</span> 
+                        <span class="h5">Apakah saya perlu membuat akun untuk menggunakan StudyBuddy?</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down collapse-icon" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
                         </svg>
@@ -137,7 +137,7 @@
             <div class="card-header" id="headingSeven">
                 <h5 class="mb-0">
                     <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                        <span class="h5">Apa yang harus saya lakukan jika lupa kata sandi?</span> 
+                        <span class="h5">Apa yang harus saya lakukan jika lupa kata sandi?</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down collapse-icon" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
                         </svg>
@@ -154,7 +154,7 @@
             <div class="card-header" id="headingEight">
                 <h5 class="mb-0">
                     <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                        <span class="h5">Bagaimana cara bergabung dengan forum diskusi?</span> 
+                        <span class="h5">Bagaimana cara bergabung dengan forum diskusi?</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down collapse-icon" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
                         </svg>
