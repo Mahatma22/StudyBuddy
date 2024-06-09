@@ -6,111 +6,20 @@
     <title>Navbar</title>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/laddingpage.css">
 
     <style>
-    .oval-button {
-        width: 110px;
-        height: 40px;
-        border-radius: 20px;
-        background-color: #007bff;
-        color: #fff;
-        border: 3px solid #FFFFFF;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding: 13px 2.2px 13px 0;
-        font-size: 20px;
-        font-family: 'Inter', sans-serif;
-        font-weight: normal;
-    }
-
-    .oval-button:hover {
-        background-color: #0056b3;
-    }
-
     body, html {
-        height: 100%;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        background-image: url('img/Wave Texture.png');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url('img/Wave Texture.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
-    .content-left {
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .navbar-brand {
-        margin-top: 5px;
-        font-weight: bold;
-    }
-
-    .title {
-        position: absolute;
-        left: 80px;
-        top: 100px;
-        font-size: 48px;
-        color: #008DDA;
-        font-weight: bold;
-    }
-
-    .landing-page .learning-management-system {
-        position: absolute;
-        left: 80px;
-        top: 150px;
-        font-size: 48px;
-        color: #008DDA;
-    }
-
-    .Isi {
-        position: absolute;
-        left: 80px;
-        top: 250px;
-        font-size: 18px;
-        color: black;
-        text-align: justify;
-    }
-
-    .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 300px;
-    }
-
-    .test {
-        width: 350px;
-        height: 450px;
-        position: relative;
-        left: 950px;
-        top: 150px;
-        border-radius: 28px;
-        outline: none;
-    }
-
-    .test2 {
-        width: 350px;
-        height: 420px;
-        position: relative;
-        left: 500px;
-        top: 220px;
-        border-radius: 28px;
-        outline: none;
-    }
-
-    .dropdown-menu {
-        min-width: auto; /* Set minimum width to auto */
-        max-width: 200px; /* Set maximum width to 200px atau sesuai kebutuhan */
-        width: auto; /* Set width to auto */
-
-    }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" integrity="sha512-gOQQLjHRpD3/SEOtalVq50iDn4opLVup2TF8c4QPI3/NmUPNZOk2FG0ihi8oCU/qYEsw4P6nuEZT2lAG0UNYaw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
