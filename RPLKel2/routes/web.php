@@ -12,6 +12,7 @@ use App\Http\Controllers\userPageController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\inputQuizController;
 use App\Http\Controllers\feedbackController;
+use App\Http\Controllers\FAQController;
 
 
 /*
@@ -81,7 +82,10 @@ Route::get('/showProfile', [profileController::class, 'showProfile'])->name('use
 Route::get('/editProfile', [profileController::class, 'editProfile'])->name('userProfile.editProfile');
 Route::put('/updateProfile/{id}', [profileController::class, 'updateProfile'])->name('userProfile.updateProfile');
 
+#feedback
 Route::get('/feedback', [feedbackController::class, 'showFeedback'])->name('feedback.form');
 Route::post('/submitFeedback', [feedbackController::class, 'submitFeedback'])->name('submitFeedback');
 Route::get('/resultFeedback', [feedbackController::class, 'resultFeedback'])->name('feedback.result');
 
+#faq
+Route::get('/FAQ', [FAQController::class, 'showFAQ'])->name('showFAQ');
