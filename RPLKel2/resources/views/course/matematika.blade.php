@@ -15,15 +15,12 @@
     <h6><iframe width="1164.4" height="600" src="{{$konten['video_link']}}" frameborder="0"></iframe></h6>
     <p class="card-text" style="text-align: justify;">{{$konten['subject_overview']}}</p>
     <h6><a href="{{ route('materials.download', $konten['subject_id']) }}" style="color: black; text-decoration: underline;">Download Full Materi Disini</a></h6>
+    <h6><a href="{{ route('doQuizUser', $konten['subject_id']) }}" style="color: black; text-decoration: underline;">Kerjakan Quiz</a></h6>
   </div>
 </div>
     
   @endforeach
 </div>
-
-
-
-
 
 @endsection
 

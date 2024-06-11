@@ -30,7 +30,7 @@ use App\Http\Controllers\FAQController;
 // route untuk User
 Route::group(['middleware' => 'UserAuthCheck'], function () {
     Route::get('/dashboardUser', [dashboardController::class, 'dashboardUser'])->name('dashboardUser');
-    Route::get('/quizUser/{subject_id}', [quizUserController::class,'show']);
+    Route::get('/quizUser/{subject_id}', [quizUserController::class,'show'])->name('doQuizUser');
     Route::post('/quizUser', [quizUserController::class,'compare']);
 });
 
