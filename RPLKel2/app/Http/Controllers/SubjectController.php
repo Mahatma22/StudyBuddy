@@ -31,9 +31,10 @@ class SubjectController extends Controller
         $filePath = $request->file('file')->store('subjects', 'public');
         
         // Simpan informasi subject ke database
+        $video = explode('=', $request->video_link);
         $subject = new Subject();
         $subject->subject_name = $request->subject_name;
-        $subject->video_link = $request->video_link;
+        $subject->video_link = $video[1];
         $subject->subject_overview = $request->subject_overview;
         $subject->subject_download = $filePath;
         $subject->course_id = $request->course_id;

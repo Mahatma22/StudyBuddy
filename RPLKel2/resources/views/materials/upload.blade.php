@@ -1,5 +1,5 @@
-@extends('layout.main')
-
+@extends('layoutAdmin.main')
+@section('tittle', 'Manage Subject')
 @section('content')
 
 <div class="container" style="background-color : #D9D9D9">
