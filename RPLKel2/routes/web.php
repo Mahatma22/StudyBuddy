@@ -13,6 +13,8 @@ use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\inputQuizController;
 use App\Http\Controllers\feedbackController;
 use App\Http\Controllers\FAQController;
+use App\Http\Controllers\ThreadController;
+use App\Http\Controllers\ReplyController;
 
 
 /*
@@ -87,3 +89,10 @@ Route::post('/feedback', [FeedbackController::class, 'submitFeedback'])->name('f
 Route::get('/resultFeedback', [FeedbackController::class, 'resultFeedback'])->name('feedback.result');
 
 Route::get('/FAQ', [FAQController::class, 'showFAQ'])->name('showFAQ');
+Route::get('/FAQAdmin', [FAQController::class, 'AdminFaq'])->name('AdminFaq');
+
+Route::resource('threads', ThreadController::class);
+Route::get('/showThreads', [ThreadController::class, 'index'])->name('showThreads');
+Route::get('/createThreads', [ThreadController::class, 'create'])->name('inputThreads');
+Route::post('threads/{thread}/replies', [ReplyController::class, 'store'])->name('replies.store');
+Route::get('threads/delete/{thread}', [ThreadController::class, 'destroy'])->name('replies.delete');
