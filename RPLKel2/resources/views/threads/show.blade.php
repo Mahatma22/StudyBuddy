@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('tittle', 'Forum')
+@section('title', 'Forum')
 
 @section('content')
 <div class="container" style="margin-top: 100px;">

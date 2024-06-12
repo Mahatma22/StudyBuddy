@@ -1,6 +1,6 @@
 @extends('layout.main')
 
-@section('tittle', 'FAQ')
+@section('title', 'FAQ')
 
 @section('css')
 <link rel="stylesheet" href="style.css">

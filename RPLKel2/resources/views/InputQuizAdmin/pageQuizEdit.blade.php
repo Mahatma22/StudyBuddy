@@ -1,5 +1,5 @@
 @extends('layoutAdmin.main')
-@section('tittle', 'Dashboard')
+@section('tittle', 'Manage Quiz')
 
 @section('css')
 <link rel="stylesheet" href="{{ URL('css/inputQuiz.css')}}">
