@@ -1,5 +1,3 @@
-
-
 const hamburger = document.querySelector('#button-navbar');
 const sidebarItems = document.querySelectorAll('.sidebar-item');
 
@@ -19,7 +17,13 @@ sidebarItems.forEach(item => {
 hamburger.onclick = () => {
     document.querySelector('#sidebar').classList.toggle('expand');
     document.querySelector('.main').classList.toggle('expanded');
-    document.querySelector('.profile').classList.toggle('profile-expand');
+    const profile = document.querySelector('.profile');
+    profile.classList.toggle('profile-expand');
+    if (profile.classList.contains('profile-expand')) {
+        profile.style.right = '260px'; // Adjust to match sidebar width when expanded
+    } else {
+        profile.style.right = '10vh'; // Original position
+    }
 };
 
 window.onscroll = function() {

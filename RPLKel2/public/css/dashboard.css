@@ -54,3 +54,22 @@ a.btn{
     margin-left:37px;
     margin-right:37px
 }
+
+.pagination .page-link {
+    color: #007bff; /* or another color */
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+}
+
+.pagination .page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.pagination .page-item .page-link:hover {
+    color: #0056b3;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+}

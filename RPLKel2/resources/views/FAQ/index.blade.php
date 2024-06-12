@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('tittle', 'Frequently Asked Question')
+@section('title', 'Frequently Asked Question')
 
 @section('css')
 <link rel="stylesheet" href="css/faq.css">
