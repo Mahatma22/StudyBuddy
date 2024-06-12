@@ -13,6 +13,8 @@ use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\inputQuizController;
 use App\Http\Controllers\feedbackController;
 use App\Http\Controllers\FAQController;
+use App\Http\Controllers\ThreadController;
+use App\Http\Controllers\ReplyController;
 
 
 /*
@@ -69,7 +71,7 @@ Route::post('/dataLogin', [AuthController::class, 'loginUser'])->name('dataLogin
 Route::post('/dataAdmin', [AuthController::class, 'loginAdmin'])->name('dataAdmin');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-// Route::get('/course', [course::class, 'index'])->name('course');
+Route::get('/course', [course::class, 'index'])->name('course');
 
 #upload materi (admin)
 Route::group(['middleware' => 'AdminAuthCheck'], function () {
@@ -86,14 +88,24 @@ Route::group(['middleware' => 'UserAuthCheck'], function (){
 
 
 #profile
+Route::get('/showProfile', [profileController::class, 'showProfile'])->name('userProfile.showProfile');
+Route::get('/editProfile', [profileController::class, 'editProfile'])->name('userProfile.editProfile');
+Route::put('/updateProfile/{id}', [profileController::class, 'updateProfile'])->name('userProfile.updateProfile');
 
 
+Route::get('/FAQ', [FAQController::class, 'showFAQ'])->name('showFAQ');
+Route::get('/FAQAdmin', [FAQController::class, 'AdminFaq'])->name('AdminFaq');
+
+Route::resource('threads', ThreadController::class);
+Route::get('/showThreads', [ThreadController::class, 'index'])->name('showThreads');
+Route::get('/createThreads', [ThreadController::class, 'create'])->name('inputThreads');
+Route::post('threads/{thread}/replies', [ReplyController::class, 'store'])->name('replies.store');
+Route::get('threads/delete/{thread}', [ThreadController::class, 'destroy'])->name('replies.delete');
 
 #feedback
 Route::get('/feedback', [feedbackController::class, 'showFeedback'])->name('feedback.form');
 Route::post('/submitFeedback', [feedbackController::class, 'submitFeedback'])->name('submitFeedback');
 Route::get('/resultFeedback', [feedbackController::class, 'resultFeedback'])->name('feedback.result');
-
 
 #faq
 Route::get('/FAQ', [FAQController::class, 'showFAQ'])->name('showFAQ');
