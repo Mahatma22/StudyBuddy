@@ -254,23 +254,24 @@ span{
 
 nav.navbar{
     position: fixed;
-    width: 190vh;
+    width: 100%;
     top: 0;
     z-index: 9999;
 }
 
 
 .profile-expand{
-    margin-right: 20vh;
     transition: all 0.35s ease-in-out;  
 }
 
 .profile{
+    margin-right: 10vh;
     transition: all 0.35s ease-in-out;
 }
 
 .content{
-    margin-top: 2rem; /* Adjust this value to match the height of your navbar */
+    margin-top: 4rem; /* Adjust this value to match the height of your navbar */
     padding: 1rem;
+    margin-bottom:4rem 
 }
 
