@@ -11,9 +11,4 @@ class FAQController extends Controller
         return view('FAQ.index');
     }
 
-    public function AdminFaq ()
-    {
-        return view('InputFaqAdmin.index');
-    }
-    
 }
