@@ -60,13 +60,16 @@ Route::post('/dataLogin', [AuthController::class, 'loginUser'])->name('dataLogin
 Route::post('/dataAdmin', [AuthController::class, 'loginAdmin'])->name('dataAdmin');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/course', [course::class, 'index'])->name('course');
+// Route::get('/course', [course::class, 'index'])->name('course');
 
 #upload materi (admin)
-Route::get('/upload', [SubjectController::class, 'create'])->name('materials.create');
-Route::post('/materials', [SubjectController::class, 'store'])->name('subjects.store');
+Route::group(['middleware' => 'AdminAuthCheck'], function () {
+    Route::get('/upload', [SubjectController::class, 'create'])->name('materials.create');
+    Route::post('/materials', [SubjectController::class, 'store'])->name('subjects.store');
+});
 
 #download materi (user)
-Route::get('/materials/{subject_id}', [SubjectController::class, 'download'])->name('materials.download');
-
-Route::get('/coursepage/{course_id}', [SubjectController::class, 'index'])->name('coursepage');
+Route::group(['middleware' => 'UserAuthCheck'], function (){
+    Route::get('/materials/{subject_id}', [SubjectController::class, 'download'])->name('materials.download');
+    Route::get('/coursepage/{course_id}', [SubjectController::class, 'index'])->name('coursepage');
+});
