@@ -10,13 +10,15 @@ class profileController extends Controller
 {
     public function showProfile()
     {
-        $users = User::all();
+        $session = session('loginUser');
+        $users = User::where('user_id', $session)->get();
         return view('userProfile.showProfile', compact('users'));
     }
 
     public function editProfile()
     {
-        $users = User::all();
+        $session = session('loginUser');
+        $users = User::where('user_id', $session)->get();
         return view('userProfile.editProfile', compact('users'));
     }
 

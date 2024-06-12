@@ -1,5 +1,5 @@
 @extends('layoutAdmin.main')
-@section('tittle', 'Quiz Result')
+@section('title', 'Quiz Result')
 
 @section('content')
 

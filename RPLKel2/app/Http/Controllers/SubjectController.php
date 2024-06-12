@@ -39,10 +39,10 @@ class SubjectController extends Controller
         $subject->course_id = $request->course_id;
         $subject->save();
         
-        return back()->with('success', 'Subject berhasil di-upload');
+        return back()->with('success', 'Berhasil di-upload');
     }
 
-    return back()->withErrors('Gagal meng-upload subject');
+    return back()->withErrors('Gagal upload subject');
 }
 
 

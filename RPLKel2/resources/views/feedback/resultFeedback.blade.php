@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('layoutAdmin.main')
 @section('tittle', 'Feedback Results')
 
 @section('css')
@@ -28,7 +28,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- @foreach($feedbacks as $feedback)
+                                @foreach($feedbacks as $feedback)
                                     <tr>
                                         <td>{{ $feedback->nama_lengkap }}</td>
                                         <td>{{ $feedback->email }}</td>
@@ -36,7 +36,7 @@
                                         <td>{{ $feedback->masukan }}</td>
                                         <td>{{ $feedback->rating }}</td>
                                     </tr>
-                                @endforeach --}}
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

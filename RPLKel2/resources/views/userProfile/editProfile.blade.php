@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('tittle', 'Settings')
+@section('title', 'Settings')
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/profile.css') }}"> 
@@ -35,7 +35,7 @@
 
             <!-- Mainbar -->
             <div class="col-lg-8">
-                <form action="{{ route('userProfile.updateProfile', ['id' => $user->user_id]) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('userProfile.updateProfile', ['id' => session('loginUser')]) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="card mb-3">

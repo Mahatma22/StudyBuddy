@@ -1,6 +1,6 @@
 
 @extends('layout.main')
-@section('tittle', 'Dashboard')
+@section('title', 'Dashboard')
 @section('Name', $Name)
 
 @section('css')
@@ -102,131 +102,29 @@
                 Quizezz
             </div>
             <div class="card-body">
-                <div class="row subject">
-                    <div class="col-sm-4 text-center font-weight-bold">
-                        Course
-                    </div>
-                    <div class="col-sm-4 text-center font-weight-bold">
-                        Subject
-                    </div>
-                    <div class="col-sm-4 text-center font-weight-bold">
-                        Action
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-sm-4 text-center font-weight-bold">
-                        <div class="row text-center font-weight-normal">
-                            <div class="col">
-                                Mathematics
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 text-center font-weight-bold">
-                        <div class="row text-center font-weight-normal">
-                            <div class="col">
-                                Integral
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 text-center font-weight-bold">
-                        <div class="d-flex justify-content-center">
-                            <a href="{{ route('feedback.form') }}" class="btn btn-primary btn-sm">Attempt Quiz</a>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-sm-4 text-center font-weight-bold">
-                        <div class="row text-center font-weight-normal">
-                            <div class="col">
-                                Mathematics
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 text-center font-weight-bold">
-                        <div class="row text-center font-weight-normal">
-                            <div class="col">
-                                Integral
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 text-center font-weight-bold">
-                        <div class="d-flex justify-content-center">
-                            <a href="#" class="btn btn-primary btn-sm">Attempt Quiz</a>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-
-                <div class="row">
-                    <div class="col-sm-4 text-center font-weight-bold">
-                        <div class="row text-center font-weight-normal">
-                            <div class="col">
-                                Mathematics
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 text-center font-weight-bold">
-                        <div class="row text-center font-weight-normal">
-                            <div class="col">
-                                Integral
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 text-center font-weight-bold">
-                        <div class="d-flex justify-content-center">
-                            <a href="#" class="btn btn-primary btn-sm">Attempt Quiz</a>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-
-                <div class="row">
-                    <div class="col-sm-4 text-center font-weight-bold">
-                        <div class="row text-center font-weight-normal">
-                            <div class="col">
-                                Mathematics
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 text-center font-weight-bold">
-                        <div class="row text-center font-weight-normal">
-                            <div class="col">
-                                Integral
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 text-center font-weight-bold">
-                        <div class="d-flex justify-content-center">
-                            <a href="#" class="btn btn-primary btn-sm">Attempt Quiz</a>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-sm-4 text-center font-weight-bold">
-                        <div class="row text-center font-weight-normal">
-                            <div class="col">
-                                Mathematics
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 text-center font-weight-bold">
-                        <div class="row text-center font-weight-normal">
-                            <div class="col">
-                                Integral
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 text-center font-weight-bold">
-                        <div class="d-flex justify-content-center">
-                            <a href="#" class="btn btn-primary btn-sm">Attempt Quiz</a>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-            </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Course</th>
+                        <th scope="col">Subject</th>
+                        <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($Subject as $key=>$s)
+                        <tr>
+                        <th scope="row">{{$key +1 }}</th>
+                        <td>{{ $s->course->course_name }}</td>
+                        <td>{{ $s['subject_name'] }}</td>
+                        <td>
+                            <a href="{{ route('doQuizUser' , $s['subject_id']) }}" class="btn btn-primary">Attempt</a>
+                        </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+                {{ $Subject->links('pagination::bootstrap-4') }}            </div>
         </div>
     </div>
 </div>

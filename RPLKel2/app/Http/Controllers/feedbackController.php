@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Masukan;
+use PHPUnit\Event\Code\Test;
 
 class feedbackController extends Controller
 {
@@ -15,17 +16,18 @@ class feedbackController extends Controller
     public function submitFeedback(Request $request)
     {
         // Validasi input
+
         $request->validate([
-            'nama_lengkap' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'telepon' => 'required|string|max:20',
             'masukan' => 'required|string|max:2000',
             'rating' => 'required|integer|min:1|max:5',
         ]);
 
+
         // Simpan feedback ke database
         Masukan::create([
-            'nama_lengkap' => $request->nama_lengkap,
+            'nama_lengkap' => session('userName'),
             'email' => $request->email,
             'telepon' => $request->telepon,
             'masukan' => $request->masukan,
@@ -38,6 +40,17 @@ class feedbackController extends Controller
 
     public function resultFeedback ()
     {
-        return view('feedback.resultFeedback');
+
+        $feedbacks = Masukan::all();
+
+        return view('feedback.resultFeedback', ['feedbacks' => $feedbacks]);
+    }
+
+    public function resultFeedbackDashboard ()
+    {
+
+        $feedbacks = Masukan::all();
+
+        return view('dashboard.dashboardAdmin', ['feedbacks' => $feedbacks]);
     }
 }

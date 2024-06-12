@@ -1,4 +1,5 @@
 @extends('layout.main')
+
 @section('tittle', 'FAQ')
 
 @section('css')
@@ -7,10 +8,10 @@
 
 @section('content')
 <div class="container mt-5">
-    <div class="faq-header">
+    {{-- <div class="faq-header">
         <h2 class="p-3 bg-light rounded">Frequently Asked Questions</h2>
-    </div>
-    
+    </div> --}}
+
     <div id="faqAccordion">
         <!-- FAQ Items will be fetched and displayed here -->
     </div>
@@ -53,4 +54,5 @@
 <script src="{{ URL('js/inputQuiz.js') }}"></script>
 
 @endsection
+
 @endsection

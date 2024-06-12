@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('tittle', 'Quiz')
+@section('title', 'Quiz')
 
 @section('css')
 <link rel="stylesheet" href="{{ URL('css/quiz.css') }}">
