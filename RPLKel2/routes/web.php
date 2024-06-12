@@ -32,6 +32,9 @@ Route::group(['middleware' => 'UserAuthCheck'], function () {
     Route::get('/dashboardUser', [dashboardController::class, 'dashboardUser'])->name('dashboardUser');
     Route::get('/quizUser/{subject_id}', [quizUserController::class,'show'])->name('doQuizUser');
     Route::post('/quizUser', [quizUserController::class,'compare']);
+    Route::get('/showProfile', [profileController::class, 'showProfile'])->name('userProfile.showProfile');
+    Route::get('/editProfile', [profileController::class, 'editProfile'])->name('userProfile.editProfile');
+    Route::put('/updateProfile/{id}', [profileController::class, 'updateProfile'])->name('userProfile.updateProfile');
 });
 
 // route untuk Admin
@@ -46,7 +49,7 @@ Route::group(['middleware' => 'AdminAuthCheck'], function () {
     Route::get('/deleteQuiz', [dropdownController::class,'deleteQuiz'])->name('deleteQuiz');
     Route::get('/detailQuiz/{course_id}', [dropdownController::class,'showQuizPage'])->name('detailQuiz');
     Route::post('/updateQuiz/{question_id}', [dropdownController::class,'updateQuiz'])->name('updateQuiz');
-    Route::get('/deleteQuestion/{question_id}', [dropdownController::class,'deleteQuestion'])->name('deleteQuestion');
+    Route::get('/deleteQuestion/{question_id}', [dropdownController::class,'delete'])->name('deleteQuestion');
 
 });
 
@@ -78,9 +81,7 @@ Route::get('/materials/{subject_id}', [SubjectController::class, 'download'])->n
 Route::get('/coursepage/{course_id}', [SubjectController::class, 'index'])->name('coursepage');
 
 #profile
-Route::get('/showProfile', [profileController::class, 'showProfile'])->name('userProfile.showProfile');
-Route::get('/editProfile', [profileController::class, 'editProfile'])->name('userProfile.editProfile');
-Route::put('/updateProfile/{id}', [profileController::class, 'updateProfile'])->name('userProfile.updateProfile');
+
 
 #feedback
 Route::get('/feedback', [feedbackController::class, 'showFeedback'])->name('feedback.form');

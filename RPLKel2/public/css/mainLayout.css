@@ -265,8 +265,10 @@ nav.navbar{
 }
 
 .profile{
-    margin-right: 10vh;
+    position: absolute; /* or fixed */
+    right: 10vh;
     transition: all 0.35s ease-in-out;
+    top: 20px; /* Adjust as needed */
 }
 
 .content{
