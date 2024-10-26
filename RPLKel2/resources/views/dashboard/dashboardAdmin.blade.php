@@ -7,12 +7,13 @@
 
 @section('content')
     <section>
-        <div class="ms-3">
-            <div class="container-fluid">
-                <div class="d-flex justify-content-center">
+    <div class="ms-3">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-md-3">
                     <a href="/quiz">
                         <div class="mt-5">
-                            <div class="card card-admin" id="Quiz" style="width: 30rem; height: 15rem;">
+                            <div class="card card-admin" id="Quiz" style="width: 100%; height: 15rem;">
                                 <div class="card-body">
                                     <div class="card-title">
                                         <div class="d-flex justify-content-center mt-3">
@@ -24,9 +25,11 @@
                             </div>
                         </div>
                     </a>
+                </div>
+                <div class="col-md-3">
                     <a href="{{ route('userPage') }}">
-                        <div class="ms-3 mt-5">
-                            <div class="card card-admin" id="Quiz" style="width: 30rem; height: 15rem;">
+                        <div class="mt-5">
+                            <div class="card card-admin" id="User" style="width: 100%; height: 15rem;">
                                 <div class="card-body">
                                     <div class="card-title">
                                         <div class="d-flex justify-content-center mt-3">
@@ -38,9 +41,11 @@
                             </div>
                         </div>
                     </a>
+                </div>
+                <div class="col-md-3">
                     <a href="#">
-                        <div class="mx-3 mt-5">
-                            <div class="card card-admin" id="Quiz" style="width: 30rem; height: 15rem;">
+                        <div class="mt-5">
+                            <div class="card card-admin" id="FAQ" style="width: 100%; height: 15rem;">
                                 <div class="card-body">
                                     <div class="card-title">
                                         <div class="d-flex justify-content-center mt-3">
@@ -53,14 +58,32 @@
                         </div>
                     </a>
                 </div>
+                <div class="col-md-3">
+                    <a href="{{ route('managecourse') }}">
+                        <div class="mt-5">
+                            <div class="card card-admin" id="Settings" style="width: 100%; height: 15rem;">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <div class="d-flex justify-content-center mt-3">
+                                            <img src="{{ URL('img/tempIcon.png') }}" alt="" width="100px">
+                                        </div>
+                                        <h6 class="text-center card-subtitle mb-2 text-body-secondary mt-4">Manage Course</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
+    </div>
+
     </section>
 
 
     <section class="mx-auto">
         <div class="d-flex justify-content-center">
-            <div id="courseProgressCard" class="card">
+            <div id="courseProgressCard" class="card" style="margin-left: 28px;">
                 <div class="card-header bg-white font-weight-bold">
                     Forum
                 </div>
@@ -193,7 +216,7 @@
             </div>
 
             <!--feedback-->
-            <div id="quizCard" class="card ms-5">
+            <div id="quizCard" class="card ms-5" style="margin-right: 13px;">
                 <div class="card-header bg-white font-weight-bold">
                     Feedback
                 </div>
