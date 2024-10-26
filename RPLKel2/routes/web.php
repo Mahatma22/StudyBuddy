@@ -89,4 +89,17 @@ Route::get('/course', [course::class, 'index'])->name('course');
 
 #upload materi (admin)
 
+Route::group(['middleware' => 'AdminAuthCheck'], function () {
+    Route::get('/coursedashboard', [SubjectController::class, 'material_dashboard'])->name('managecourse');
+    Route::get('/editcourse', [SubjectController::class, 'edit'])->name('edit');
+    Route::get('/editcourse/{id}', [SubjectController::class, 'upload_edit'])->name('upload_edit');
+    Route::put('/editcourse/{id}', [SubjectController::class, 'update'])->name('update');
+    Route::get('/deleteSubject/{id}', [SubjectController::class, 'delete'])->name('delete-subject');
+    Route::get('/upload', [SubjectController::class, 'create'])->name('materials.create');
+    Route::post('/materials', [SubjectController::class, 'store'])->name('subjects.store');
+});
+
+#download materi (user)
+
+
 Route::post('/submitFeedback', [feedbackController::class, 'submitFeedback'])->name('submitFeedback');
