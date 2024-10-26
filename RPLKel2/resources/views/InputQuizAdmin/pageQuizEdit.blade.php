@@ -1,5 +1,5 @@
 @extends('layoutAdmin.main')
-@section('tittle', 'Dashboard')
+@section('tittle', 'Manage Quiz')
 
 @section('css')
 <link rel="stylesheet" href="{{ URL('css/inputQuiz.css')}}">
@@ -39,7 +39,7 @@
                                         </td>
                                         <td >
                                             @include('InputQuizAdmin.asset.updateQuestionModal') 
-                                            <a href="/deleteQuestion/{{$quiz['question_id']}}" class="btn btn-danger btn-sm">Delete</a>
+                                            <a href="{{route('deleteQuestion' , $quiz['id'])}}" class="btn btn-danger btn-sm">Delete</a>
                                         </td>
                                     </tr>
                                 @endforeach

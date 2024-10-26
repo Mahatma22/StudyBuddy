@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('tittle', 'Feedback')
+@section('title', 'Feedback')
 
 @section('css')
 <link rel="stylesheet" href="css/feedback.css">

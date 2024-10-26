@@ -11,4 +11,13 @@ class Subject extends Model
     protected $table ='subject';
     protected $fillable = ['subject_name', 'course_id', 'video_link'];
     protected $primaryKey = 'subject_id';
+
+    public function course(){
+        return $this->belongsTo(Course::class, 'course_id');
+    }
+    public function subjects()
+    {
+        return $this->hasMany(Subject::class, 'course_id');
+    }
 }
+
